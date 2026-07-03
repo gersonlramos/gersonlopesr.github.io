@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 02 planning completed
-last_updated: "2026-07-03T21:05:00.000Z"
-last_activity: 2026-07-03 -- Phase 02 plans created and ready for execution
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-07-03T21:28:30.639Z"
+last_activity: 2026-07-03
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 8
-  completed_plans: 4
+  completed_plans: 5
   percent: 50
 ---
 
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-07-03)
 
 ## Current Position
 
-Phase: 02 (core-narrative-pages) — PLANNED
-Plan: 0 of 4
+Phase: 02 (core-narrative-pages) — EXECUTING
+Plan: 2 of 4
 Status: Ready to execute
-Last activity: 2026-07-03 -- planning artifacts created
+Last activity: 2026-07-03
 
 Progress: [█████░░░░░] 50%
 
@@ -45,7 +45,7 @@ Progress: [█████░░░░░] 50%
 | Phase                             | Plans | Total | Avg/Plan |
 | --------------------------------- | ----- | ----- | -------- |
 | 01-foundation-deployment-pipeline | 4     | -     | -        |
-| 02-core-narrative-pages | 0 | - | - |
+| 02-core-narrative-pages           | 0     | -     | -        |
 
 **Recent Trend:**
 
@@ -53,6 +53,7 @@ Progress: [█████░░░░░] 50%
 - Trend: steady
 
 _Updated after each plan completion_
+| Phase 02 P01 | 5 | 1 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -64,6 +65,7 @@ Recent decisions affecting current work:
 - Init: Stack chosen as Astro 6 + MDX + Tailwind v4, deployed via withastro/action to GitHub Pages (assumption, not user-confirmed — flagged for revisit).
 - Init: Content language set to English (assumption, not user-confirmed — flagged for revisit before Phase 2 content drafting).
 - Init: Blog/auth/CMS/social comments explicitly out of scope for v1.
+- [Phase 02]: Added placeholder Experience/Contact section anchors on the homepage in 02-01 so Nav links resolve immediately; full content deferred to 02-02/02-03
 
 ### Pending Todos
 
@@ -80,6 +82,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-07-03T21:05:00.000Z
-Stopped at: Phase 02 planning completed
-Resume file: .planning/phases/02-core-narrative-pages/02-01-PLAN.md
+Last session: 2026-07-03T21:28:30.616Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: None

@@ -13,7 +13,7 @@
 
 ### Narrativa (Sobre / Experiência / Contato)
 
-- [ ] **NARR-01**: Visitante consegue ler uma seção Sobre/hero declarando o posicionamento híbrido Cientista de Dados + Engenheiro de Dados
+- [x] **NARR-01**: Visitante consegue ler uma seção Sobre/hero declarando o posicionamento híbrido Cientista de Dados + Engenheiro de Dados
 - [ ] **NARR-02**: Visitante consegue ver um resumo da experiência profissional (estilo CV)
 - [ ] **NARR-03**: Visitante consegue baixar um CV/currículo em PDF
 - [ ] **NARR-04**: Visitante encontra informações de contato e links para perfis externos (LinkedIn, GitHub, Kaggle) a partir de qualquer página
@@ -67,7 +67,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SETUP-01 | Phase 1 | Pending |
 | SETUP-02 | Phase 1 | Pending |
 | SETUP-03 | Phase 1 | Pending |
-| NARR-01 | Phase 2 | Pending |
+| NARR-01 | Phase 2 | Complete |
 | NARR-02 | Phase 2 | Pending |
 | NARR-03 | Phase 2 | Pending |
 | NARR-04 | Phase 2 | Pending |
