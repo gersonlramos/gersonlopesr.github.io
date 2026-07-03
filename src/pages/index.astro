@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { experience } from '../data/experience';
 ---
 
 <BaseLayout>
@@ -20,10 +21,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section
     id="experience"
-    class="mx-auto flex max-w-5xl scroll-mt-24 flex-col gap-4 px-4 py-12 text-center sm:py-16"
+    class="mx-auto flex max-w-5xl scroll-mt-24 flex-col gap-8 px-4 py-12 sm:py-16"
   >
-    <h2 class="text-2xl font-semibold leading-tight text-foreground">Experience</h2>
-    <p class="text-base leading-normal text-muted-foreground">Coming soon.</p>
+    <h2 class="text-center text-2xl font-semibold leading-tight text-foreground">Experience</h2>
+    <ol class="flex flex-col gap-6">
+      {experience.map((entry) => (
+        <li class="rounded border border-border bg-surface p-6">
+          <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+            <h3 class="text-lg font-semibold leading-snug text-foreground">
+              {entry.role} · {entry.organization}
+            </h3>
+            <p class="font-mono text-sm text-muted-foreground">{entry.period}</p>
+          </div>
+          <p class="mt-2 text-base leading-normal text-muted-foreground">{entry.context}</p>
+          <ul class="mt-4 flex flex-col gap-2">
+            {entry.impact.map((point) => (
+              <li class="flex gap-2 text-base leading-normal text-foreground">
+                <span class="text-accent" aria-hidden="true">▹</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ol>
   </section>
 
   <section
