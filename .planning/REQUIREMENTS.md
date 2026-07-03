@@ -64,29 +64,29 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SETUP-01 | TBD | Pending |
-| SETUP-02 | TBD | Pending |
-| SETUP-03 | TBD | Pending |
-| NARR-01 | TBD | Pending |
-| NARR-02 | TBD | Pending |
-| NARR-03 | TBD | Pending |
-| NARR-04 | TBD | Pending |
-| PROJ-01 | TBD | Pending |
-| PROJ-02 | TBD | Pending |
-| PROJ-03 | TBD | Pending |
-| PROJ-04 | TBD | Pending |
-| PROJ-05 | TBD | Pending |
-| PROJ-06 | TBD | Pending |
-| POLISH-01 | TBD | Pending |
-| POLISH-02 | TBD | Pending |
-| POLISH-03 | TBD | Pending |
-| POLISH-04 | TBD | Pending |
+| SETUP-01 | Phase 1 | Pending |
+| SETUP-02 | Phase 1 | Pending |
+| SETUP-03 | Phase 1 | Pending |
+| NARR-01 | Phase 2 | Pending |
+| NARR-02 | Phase 2 | Pending |
+| NARR-03 | Phase 2 | Pending |
+| NARR-04 | Phase 2 | Pending |
+| PROJ-01 | Phase 3 | Pending |
+| PROJ-02 | Phase 3 | Pending |
+| PROJ-03 | Phase 3 | Pending |
+| PROJ-04 | Phase 3 | Pending |
+| PROJ-05 | Phase 3 | Pending |
+| PROJ-06 | Phase 3 | Pending |
+| POLISH-01 | Phase 4 | Pending |
+| POLISH-02 | Phase 4 | Pending |
+| POLISH-03 | Phase 4 | Pending |
+| POLISH-04 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 17 total
-- Mapped to phases: 0 (roadmap not yet created)
-- Unmapped: 17 ⚠️
+- Mapped to phases: 17/17 ✓
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-07-03*
-*Last updated: 2026-07-03 after initial definition (auto-generated from research due to no user response — review recommended)*
+*Last updated: 2026-07-03 after roadmap creation — 4 phases, full v1 coverage confirmed*
