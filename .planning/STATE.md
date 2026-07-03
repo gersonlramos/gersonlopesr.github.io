@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-03-PLAN.md
-last_updated: "2026-07-03T21:47:41.653Z"
+stopped_at: "02-04: content fix deployed and re-verified; Task 3 checkpoint still awaiting user sign-off"
+last_updated: "2026-07-03T22:07:12.325Z"
 last_activity: 2026-07-03
 progress:
   total_phases: 4
@@ -71,10 +71,11 @@ Recent decisions affecting current work:
 - [Phase 02-core-narrative-pages]: Experience data model built as typed src/data/experience.ts array (role, organization, period, context, impact) with placeholder organization names pending user's real CV details, following the same placeholder convention used for LinkedIn/Kaggle links in 02-01
 - [Phase 02]: Offered both EN and PT resume downloads as two distinct CTAs per explicit user request
 - [Phase 02]: Added *.docx to .gitignore to keep raw resume source documents (PII) out of the public repo
+- [Phase 02-core-narrative-pages, 02-04]: Corrected placeholder experience data and wrong display name ("Gerson Lopes" -> "Gerson Ramos") found during the Task 3 human-verify checkpoint; fixed content sourced from the user's real resume, redeployed, and re-verified live — checkpoint sign-off still pending user confirmation
 
 ### Pending Todos
 
-- Execute plan 02-04 (deployment and live verification) — must include a live check of the resume PDF URLs (`/resume.pdf`, `/resume-pt.pdf`) and footer profile links, since 02-03 only verified them locally against `npm run build` output
+- **Plan 02-04, Task 3 (checkpoint:human-verify) is OPEN.** Live deploy was confirmed and automated smoke checks passed (Tasks 1-2), but the user's manual review found content-accuracy defects: placeholder employer names in `src/data/experience.ts` and wrong display name ("Gerson Lopes" instead of "Gerson Ramos"). Both have been fixed, redeployed, and re-verified via automated smoke checks against the live site — awaiting the user's explicit sign-off on the corrected content at https://gersonlramos.github.io/gersonlopesr.github.io before Phase 2 can be marked complete.
 
 ### Blockers/Concerns
 
@@ -84,6 +85,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-07-03T21:45:55.236Z
-Stopped at: Completed 02-03-PLAN.md
+Last session: 2026-07-03T22:07:12.268Z
+Stopped at: 02-04: content fix deployed and re-verified; Task 3 checkpoint still awaiting user sign-off
 Resume file: None
