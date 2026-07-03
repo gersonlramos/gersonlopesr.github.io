@@ -15,8 +15,8 @@
 
 - [x] **NARR-01**: Visitante consegue ler uma seção Sobre/hero declarando o posicionamento híbrido Cientista de Dados + Engenheiro de Dados
 - [x] **NARR-02**: Visitante consegue ver um resumo da experiência profissional (estilo CV)
-- [ ] **NARR-03**: Visitante consegue baixar um CV/currículo em PDF
-- [ ] **NARR-04**: Visitante encontra informações de contato e links para perfis externos (LinkedIn, GitHub, Kaggle) a partir de qualquer página
+- [x] **NARR-03**: Visitante consegue baixar um CV/currículo em PDF
+- [x] **NARR-04**: Visitante encontra informações de contato e links para perfis externos (LinkedIn, GitHub, Kaggle) a partir de qualquer página
 
 ### Projetos & Case Studies
 
@@ -69,8 +69,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SETUP-03 | Phase 1 | Pending |
 | NARR-01 | Phase 2 | Complete |
 | NARR-02 | Phase 2 | Complete |
-| NARR-03 | Phase 2 | Pending |
-| NARR-04 | Phase 2 | Pending |
+| NARR-03 | Phase 2 | Complete |
+| NARR-04 | Phase 2 | Complete |
 | PROJ-01 | Phase 3 | Pending |
 | PROJ-02 | Phase 3 | Pending |
 | PROJ-03 | Phase 3 | Pending |

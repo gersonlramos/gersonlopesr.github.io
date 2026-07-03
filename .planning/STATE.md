@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-02-PLAN.md
-last_updated: "2026-07-03T21:32:42.959Z"
+stopped_at: Completed 02-03-PLAN.md
+last_updated: "2026-07-03T21:47:41.653Z"
 last_activity: 2026-07-03
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 8
-  completed_plans: 6
-  percent: 50
+  completed_plans: 7
+  percent: 88
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-07-03)
 ## Current Position
 
 Phase: 02 (core-narrative-pages) — EXECUTING
-Plan: 3 of 4
+Plan: 4 of 4
 Status: Ready to execute
 Last activity: 2026-07-03
 
-Progress: [█████░░░░░] 50%
+Progress: [█████████░] 88%
 
 ## Performance Metrics
 
@@ -55,6 +55,7 @@ Progress: [█████░░░░░] 50%
 _Updated after each plan completion_
 | Phase 02 P01 | 5 | 1 tasks | 2 files |
 | Phase 02-core-narrative-pages P02 | 3min | 1 tasks | 2 files |
+| Phase 02 P03 | 15min | 1 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -68,11 +69,12 @@ Recent decisions affecting current work:
 - Init: Blog/auth/CMS/social comments explicitly out of scope for v1.
 - [Phase 02]: Added placeholder Experience/Contact section anchors on the homepage in 02-01 so Nav links resolve immediately; full content deferred to 02-02/02-03
 - [Phase 02-core-narrative-pages]: Experience data model built as typed src/data/experience.ts array (role, organization, period, context, impact) with placeholder organization names pending user's real CV details, following the same placeholder convention used for LinkedIn/Kaggle links in 02-01
+- [Phase 02]: Offered both EN and PT resume downloads as two distinct CTAs per explicit user request
+- [Phase 02]: Added *.docx to .gitignore to keep raw resume source documents (PII) out of the public repo
 
 ### Pending Todos
 
-- Execute plan 02-03 checkpoint (final profile URLs + resume PDF; also candidate point to confirm real Experience content from src/data/experience.ts)
-- Execute plan 02-04 (deployment and live verification)
+- Execute plan 02-04 (deployment and live verification) — must include a live check of the resume PDF URLs (`/resume.pdf`, `/resume-pt.pdf`) and footer profile links, since 02-03 only verified them locally against `npm run build` output
 
 ### Blockers/Concerns
 
@@ -82,6 +84,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-07-03T21:32:42.939Z
-Stopped at: Completed 02-02-PLAN.md
+Last session: 2026-07-03T21:45:55.236Z
+Stopped at: Completed 02-03-PLAN.md
 Resume file: None
