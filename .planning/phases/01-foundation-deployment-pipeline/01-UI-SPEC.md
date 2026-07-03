@@ -1,7 +1,7 @@
 ---
 phase: 1
 slug: foundation-deployment-pipeline
-status: draft
+status: approved
 shadcn_initialized: false
 preset: none
 created: 2026-07-03
@@ -48,7 +48,7 @@ Declared values (must be multiples of 4):
 | 3xl | 64px | Page-level spacing (top-level page margin on desktop) |
 
 Exceptions:
-- Footer social icon links (LinkedIn/GitHub/Kaggle/Email): visual icon may render at 20–24px, but the clickable/tappable area must be a minimum **44×44px** touch target (WCAG 2.5.5) — pad the `<a>` element, don't rely on icon size alone.
+- Footer social icon links (LinkedIn/GitHub/Kaggle/Email): visual icon may render at 20–24px, but the clickable/tappable area must be a minimum **44×44px** touch target (WCAG 2.5.5) — pad the `<a>` element, don't rely on icon size alone. Accessible label mechanism: each icon-only link must carry a visible `sr-only`/screen-reader-only text label (e.g. "Email", "LinkedIn", "GitHub", "Kaggle" per the Copywriting Contract) — not just a bare `aria-label` attribute — so the link name is available to both assistive tech and in-page text search.
 
 ---
 
@@ -68,6 +68,8 @@ Exactly 2 weights declared (400, 600) — do not introduce a third weight in thi
 - **Heading (20px/600):** Nav brand/site-name text (short form: "Gerson Lopes"), 404 page heading.
 - **Label (14px/600):** Nav links, footer links/column headings — semibold for legibility against the dark background at small size.
 - **Body (16px/400):** Any paragraph copy (placeholder home subtext, 404 body copy).
+
+**Focal point:** The placeholder home page's Display H1 ("Gerson Lopes — Data Scientist & Data Engineer") is the primary visual anchor for Phase 1 — it must be the largest, highest-contrast element on the page, with the Body subtext directly beneath it as the only other content.
 
 ---
 
@@ -124,11 +126,11 @@ No third-party registries declared. Vetting gate not triggered.
 
 ## Checker Sign-Off
 
-- [ ] Dimension 1 Copywriting: PASS
-- [ ] Dimension 2 Visuals: PASS
-- [ ] Dimension 3 Color: PASS
-- [ ] Dimension 4 Typography: PASS
-- [ ] Dimension 5 Spacing: PASS
-- [ ] Dimension 6 Registry Safety: PASS
+- [x] Dimension 1 Copywriting: PASS
+- [x] Dimension 2 Visuals: PASS (2 non-blocking recommendations applied — focal point + accessible label mechanism)
+- [x] Dimension 3 Color: PASS
+- [x] Dimension 4 Typography: PASS
+- [x] Dimension 5 Spacing: PASS
+- [x] Dimension 6 Registry Safety: PASS
 
-**Approval:** pending
+**Approval:** approved 2026-07-03
