@@ -41,7 +41,7 @@ Os case studies de projetos precisam comunicar claramente a capacidade técnica 
 ## Constraints
 
 - **Hospedagem**: GitHub Pages — decisão já tomada pelo usuário, implica site estático (HTML/CSS/JS ou gerado por SSG compatível, sem backend dinâmico)
-- **Idioma**: A definir — usuário mencionou "mostrar para o mundo", o que sugere alcance internacional (possivelmente conteúdo em inglês, ou bilíngue). **Pendente de confirmação com o usuário antes do roadmap.**
+- **Idioma**: Inglês — escolhido por padrão para maximizar alcance internacional, alinhado com o objetivo de "se mostrar para o mundo". **Assunção do Claude, não confirmada pelo usuário — fácil de revisitar/trocar para PT ou bilíngue.**
 
 ## Key Decisions
 
@@ -50,7 +50,7 @@ Os case studies de projetos precisam comunicar claramente a capacidade técnica 
 | Hospedar via GitHub Pages | Já decidido pelo usuário — gratuito, integrado ao GitHub onde os projetos já vivem | — Pending |
 | Estrutura v1: Sobre + Projetos + Experiência + Contato | Cobre o essencial para "vender" capacidades sem inflar escopo; blog fica para v2 | — Pending |
 | Blog adiado para v2 | Foco do v1 é mostrar projetos existentes rapidamente; blog é trabalho contínuo separado | — Pending |
-| Idioma do conteúdo (PT/EN/bilíngue) | Ainda não confirmado com o usuário — impacta alcance internacional vs. mercado local | ⚠️ Revisit |
+| Idioma do conteúdo: Inglês | Assunção do Claude (usuário não respondeu à pergunta) — maximiza alcance internacional, mas pode ser trocado facilmente | ⚠️ Revisit |
 
 ## Evolution
 
