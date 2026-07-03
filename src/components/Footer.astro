@@ -1,0 +1,35 @@
+---
+import { Mail, Linkedin, Github, BarChart3 } from 'lucide-astro';
+
+interface ContactLink {
+  label: string;
+  href: string;
+  icon: typeof Mail;
+}
+
+const contactLinks: ContactLink[] = [
+  { label: 'Email', href: 'mailto:gersonlopesr@gmail.com', icon: Mail },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/PLACEHOLDER-confirm-phase-2', icon: Linkedin },
+  { label: 'GitHub', href: 'https://github.com/gersonlopesr', icon: Github },
+  { label: 'Kaggle', href: 'https://www.kaggle.com/PLACEHOLDER-confirm-phase-2', icon: BarChart3 },
+];
+---
+
+<footer class="bg-surface border-t border-border px-4 py-6 sm:px-8">
+  <div class="mx-auto flex max-w-5xl flex-col items-center gap-8 sm:flex-row sm:justify-between">
+    <ul class="flex gap-2">
+      {contactLinks.map(({ label, href, icon: Icon }) => (
+        <li>
+          <a
+            href={href}
+            class="flex h-11 w-11 items-center justify-center rounded text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+          >
+            <Icon aria-hidden="true" size={22} />
+            <span class="sr-only">{label}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="text-sm text-muted-foreground">&copy; 2026 Gerson Lopes</p>
+  </div>
+</footer>

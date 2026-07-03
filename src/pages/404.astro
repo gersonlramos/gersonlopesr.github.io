@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page not found — Gerson Lopes">
+  <div class="mx-auto flex max-w-5xl flex-col items-center gap-4 px-4 py-12 text-center sm:py-16">
+    <h2 class="text-xl font-semibold leading-tight text-foreground">Page not found.</h2>
+    <p class="text-base leading-normal text-muted-foreground">
+      That page doesn't exist or may have moved. Head back to the homepage.
+    </p>
+    <a
+      href="/"
+      class="text-sm font-semibold text-accent hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+    >
+      Back to home
+    </a>
+  </div>
+</BaseLayout>
