@@ -27,7 +27,13 @@ Decimal phases appear between their surrounding integers in numeric order.
   1. The site is built with Astro + MDX + Tailwind and automatically redeploys via GitHub Actions whenever changes are pushed
   2. The site is reachable at a working `username.github.io` URL with no broken paths or 404s
   3. Every page shows a persistent navigation bar and footer containing contact/profile links
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Astro 7 scaffold, site config, projects Content Collection schema, dark tech theme + fonts
+- [ ] 01-02-PLAN.md — Persistent Nav/Footer shell (BaseLayout), placeholder home page, custom 404 page
+- [ ] 01-03-PLAN.md — GitHub Actions CI/CD workflow (build + deploy to GitHub Pages)
+- [ ] 01-04-PLAN.md — Create gersonlopesr.github.io repo, push, verify live deployment (checkpoint)
 **UI hint**: yes
 
 ### Phase 2: Core Narrative Pages
@@ -74,7 +80,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Deployment Pipeline | 0/TBD | Not started | - |
+| 1. Foundation & Deployment Pipeline | 0/4 | Not started | - |
 | 2. Core Narrative Pages | 0/TBD | Not started | - |
 | 3. Case Study Template & Project Content | 0/TBD | Not started | - |
 | 4. Polish, Performance & Launch | 0/TBD | Not started | - |
