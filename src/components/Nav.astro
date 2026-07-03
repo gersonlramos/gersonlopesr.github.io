@@ -7,6 +7,9 @@ interface NavLink {
 const homeHref = import.meta.env.BASE_URL;
 const navLinks: NavLink[] = [
   { label: 'Home', href: homeHref },
+  { label: 'About', href: `${homeHref}#about` },
+  { label: 'Experience', href: `${homeHref}#experience` },
+  { label: 'Contact', href: `${homeHref}#contact` },
 ];
 const normalizedCurrentPath = Astro.url.pathname.endsWith('/')
   ? Astro.url.pathname
