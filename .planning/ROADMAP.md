@@ -12,7 +12,7 @@ The journey goes from an empty repository to a live, polished portfolio site at 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation & Deployment Pipeline** - Astro/MDX/Tailwind project scaffold deploys automatically to a working GitHub Pages URL with a persistent base layout
+- [x] **Phase 1: Foundation & Deployment Pipeline** - Astro/MDX/Tailwind project scaffold deploys automatically to a working GitHub Pages URL with a persistent base layout
 - [ ] **Phase 2: Core Narrative Pages** - Visitor understands who the professional is, their experience, and how to reach them
 - [ ] **Phase 3: Case Study Template & Project Content** - Visitor can browse and read fully-realized case studies that prove technical capability and reasoning
 - [ ] **Phase 4: Polish, Performance & Launch** - Site is fast, responsive, discoverable, and fully verified before public launch
@@ -45,7 +45,12 @@ Plans:
   2. Visitor sees a CV-style summary of professional experience
   3. Visitor can download a CV/resume in PDF format
   4. From any page, visitor finds contact information and links to LinkedIn, GitHub, and Kaggle
-**Plans**: TBD
+**Plans**: 4 plans
+Plans:
+- [ ] 02-01-PLAN.md — Narrative hero/about content and section-aware navigation
+- [ ] 02-02-PLAN.md — CV-style experience data model and homepage rendering
+- [ ] 02-03-PLAN.md — Final profile links and resume PDF download (checkpoint)
+- [ ] 02-04-PLAN.md — Production deploy verification and human narrative review
 **UI hint**: yes
 
 ### Phase 3: Case Study Template & Project Content
@@ -80,7 +85,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Deployment Pipeline | 0/4 | Not started | - |
-| 2. Core Narrative Pages | 0/TBD | Not started | - |
+| 1. Foundation & Deployment Pipeline | 4/4 | Completed | 2026-07-03 |
+| 2. Core Narrative Pages | 0/4 | Planned | - |
 | 3. Case Study Template & Project Content | 0/TBD | Not started | - |
 | 4. Polish, Performance & Launch | 0/TBD | Not started | - |
