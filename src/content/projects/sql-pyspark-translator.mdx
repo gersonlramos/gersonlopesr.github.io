@@ -1,0 +1,23 @@
+---
+title: "SQL-to-PySpark Query Translator"
+summary: "Custom parser/translator that converts SQL queries (joins, aliases, aggregates, GROUP BY) into equivalent PySpark DataFrame code."
+category: "data-engineering"
+impactSummary: "Builds direct, hands-on fluency in the SQL-to-Spark translation layer underlying the Airflow/Apache Iceberg/Spark orchestration refactor work already disclosed in the Experience section, demonstrated here as a standalone, inspectable tool."
+stack: ["Python", "PySpark", "SQL"]
+role: "Sole developer"
+repoUrl: "https://github.com/gersonlramos/SQL_PySpark_Translator"
+diagramPath: "/projects/sql-pyspark-translator/diagram.svg"
+order: 3
+---
+
+## Problem
+
+Teams migrating workloads from SQL-based warehouses to Spark often need to hand-translate existing queries into PySpark code. For anything beyond a trivial `SELECT`, that manual translation — juggling joins, aliases, aggregates, and `GROUP BY` clauses correctly — is slow and error-prone, and mistakes are easy to miss until a job produces the wrong numbers downstream.
+
+## Approach
+
+A custom lexer/parser tokenizes the incoming SQL query, builds an intermediate representation (a query AST) that captures the query's structure independent of its original syntax, and then generates equivalent PySpark DataFrame code from that representation (see diagram above). The translator specifically handles joins, column aliases, aggregate functions, and `GROUP BY` clauses — the constructs that make manual translation error-prone in the first place.
+
+## Impact
+
+This is a self-directed practice project, not a disclosed employer engagement, so its impact is framed accordingly: it demonstrates hands-on command of the exact SQL-to-Spark translation logic underlying the "refactored Airflow orchestrations... Apache Iceberg and Spark" work already disclosed in the Experience section, built here as a standalone, publicly inspectable artifact rather than an internal one. It is not claimed to have replaced any production system or to have measured adoption metrics.
