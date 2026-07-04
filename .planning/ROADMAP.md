@@ -72,8 +72,16 @@ Plans:
 3. Each case study explicitly states the business/practical impact of the project, not just a technical metric
 4. Data Engineering case studies include a static architecture/pipeline diagram
 5. At least one flagship project links to an externally-hosted interactive demo
-   **Plans**: TBD
-   **UI hint**: yes
+   **Plans**: 5 plans
+
+Plans:
+
+- [ ] 03-01-PLAN.md — Schema extension, GitHub link fix, Projects gallery + case study routes (infrastructure)
+- [ ] 03-02-PLAN.md — Flagship DE case study: Analise_cenarios (diagram + content + PROJ-06 demo link)
+- [ ] 03-03-PLAN.md — DE case studies: redshift-dbt + SQL_PySpark_Translator (diagrams + content)
+- [ ] 03-04-PLAN.md — DS case studies: Sales_Real_Time + Postgres-Clean-Process-SuperStore (content)
+- [ ] 03-05-PLAN.md — Cross-project verification + human review checkpoint
+      **UI hint**: yes
 
 ### Phase 4: Polish, Performance & Launch
 
@@ -98,5 +106,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | ---------------------------------------- | -------------- | ----------- | ---------- |
 | 1. Foundation & Deployment Pipeline      | 4/4            | Completed   | 2026-07-03 |
 | 2. Core Narrative Pages                  | 4/4 | Complete    | 2026-07-04 |
-| 3. Case Study Template & Project Content | 0/TBD          | Not started | -          |
+| 3. Case Study Template & Project Content | 0/5            | Not started | -          |
 | 4. Polish, Performance & Launch          | 0/TBD          | Not started | -          |

@@ -1,8 +1,8 @@
 ---
 phase: 3
 slug: case-study-template-project-content
-status: draft
-nyquist_compliant: false
+status: planned
+nyquist_compliant: true
 wave_0_complete: false
 created: 2026-07-04
 ---
@@ -38,9 +38,17 @@ created: 2026-07-04
 
 | Task ID | Plan | Wave | Requirement | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|-----------|-------------------|-------------|--------|
-| 03-01-01 | 01 | 1 | PROJ-01, PROJ-02 | schema-enforced | `npm run build` | ❌ W0 (build is the gate) | ⬜ pending |
-| 03-02-01 | 02 | 2 | PROJ-03, PROJ-04, PROJ-05 | schema-enforced + manual | `npm run build` | ❌ W0 | ⬜ pending |
-| 03-03-01 | 03 | 3 | PROJ-06 | manual | Manual: visit demoUrl, confirm HTTP 200 | — | ⬜ pending |
+| 03-01-T1 | 01 | 1 | PROJ-01, PROJ-02 | schema-enforced | `npm run build` | ❌ W0 (build is the gate) | ⬜ pending |
+| 03-01-T2 | 01 | 1 | PROJ-01 | schema-enforced | `npm run build` | ❌ W0 | ⬜ pending |
+| 03-01-T3 | 01 | 1 | PROJ-02 | schema-enforced | `npm run build` | ❌ W0 | ⬜ pending |
+| 03-02-T1 | 02 | 2 | PROJ-04 | file-exists | `test -f diagram.svg` | ❌ W0 | ⬜ pending |
+| 03-02-T2 | 02 | 2 | PROJ-03, PROJ-04, PROJ-05, PROJ-06 | schema-enforced + manual | `npm run build` | ❌ W0 | ⬜ pending |
+| 03-03-T1 | 03 | 2 | PROJ-03, PROJ-04, PROJ-05 | schema-enforced + manual | `npm run build` | ❌ W0 | ⬜ pending |
+| 03-03-T2 | 03 | 2 | PROJ-03, PROJ-04, PROJ-05 | schema-enforced + manual | `npm run build` | ❌ W0 | ⬜ pending |
+| 03-04-T1 | 04 | 2 | PROJ-03, PROJ-05 | schema-enforced + manual | `npm run build` | ❌ W0 | ⬜ pending |
+| 03-04-T2 | 04 | 2 | PROJ-03, PROJ-05 | schema-enforced + manual | `npm run build` | ❌ W0 | ⬜ pending |
+| 03-05-T1 | 05 | 3 | PROJ-01 through PROJ-06 (structural) | schema-enforced | `npm run build` | ❌ W0 | ⬜ pending |
+| 03-05-T2 | 05 | 3 | PROJ-01 through PROJ-06 (content quality, PROJ-06 demo) | manual (checkpoint:human-verify) | Manual: visit demoUrl, confirm HTTP 200 + interactive | — | ⬜ pending |
 
 *Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
 
@@ -69,6 +77,6 @@ Existing infrastructure covers all phase requirements. No test framework install
 - [x] Wave 0 covers all MISSING references (none needed — build is the gate)
 - [x] No watch-mode flags
 - [x] Feedback latency < 30s
-- [ ] `nyquist_compliant: true` set in frontmatter (set by planner once plans are finalized)
+- [x] `nyquist_compliant: true` set in frontmatter (set by planner once plans are finalized)
 
-**Approval:** pending
+**Approval:** planner-finalized — 5 plans across 3 waves created 2026-07-04, matching this validation contract.
