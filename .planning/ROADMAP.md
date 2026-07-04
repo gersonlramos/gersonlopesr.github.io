@@ -97,6 +97,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase                                    | Plans Complete | Status      | Completed  |
 | ---------------------------------------- | -------------- | ----------- | ---------- |
 | 1. Foundation & Deployment Pipeline      | 4/4            | Completed   | 2026-07-03 |
-| 2. Core Narrative Pages                  | 4/4 | Complete   | 2026-07-04 |
+| 2. Core Narrative Pages                  | 4/4 | Complete    | 2026-07-04 |
 | 3. Case Study Template & Project Content | 0/TBD          | Not started | -          |
 | 4. Polish, Performance & Launch          | 0/TBD          | Not started | -          |
