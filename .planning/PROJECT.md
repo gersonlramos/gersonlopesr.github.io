@@ -12,15 +12,14 @@ Os case studies de projetos precisam comunicar claramente a capacidade técnica 
 
 ### Validated
 
-(Nenhum ainda — construir para validar)
+- [x] Visitante consegue entender rapidamente quem é o profissional e sua proposta de valor (seção "Sobre") — Validated in Phase 02: core-narrative-pages
+- [x] Visitante consegue ver a trajetória profissional/experiência (resumo tipo CV) — Validated in Phase 02: core-narrative-pages
+- [x] Visitante consegue entrar em contato ou encontrar links para outros perfis (LinkedIn, GitHub, Kaggle, e-mail) — Validated in Phase 02: core-narrative-pages
 
 ### Active
 
-- [ ] Visitante consegue entender rapidamente quem é o profissional e sua proposta de valor (seção "Sobre")
 - [ ] Visitante consegue navegar por uma galeria/lista de projetos
 - [ ] Visitante consegue abrir um case study detalhado de cada projeto (problema, abordagem, tecnologias, resultado/impacto)
-- [ ] Visitante consegue ver a trajetória profissional/experiência (resumo tipo CV)
-- [ ] Visitante consegue entrar em contato ou encontrar links para outros perfis (LinkedIn, GitHub, Kaggle, e-mail)
 - [ ] Site é responsivo (funciona bem em mobile e desktop)
 - [ ] Site é hospedado via GitHub Pages
 
@@ -72,5 +71,9 @@ This document evolves at phase transitions and milestone boundaries.
 3. Audit Out of Scope — reasons still valid?
 4. Update Context with current state
 
+## Current State
+
+Phase 02 (core-narrative-pages) complete — homepage now has real hero/about copy with explicit hybrid Data Scientist + Data Engineer positioning, a CV-style Experience section backed by the user's actual work history, working resume PDF downloads (EN/PT), and real profile/contact links (LinkedIn, GitHub, Kaggle, email), all verified live on GitHub Pages. Next: Phase 03 (case study template & project content).
+
 ---
-*Last updated: 2026-07-03 after initialization*
+*Last updated: 2026-07-04 after Phase 02 completion*
