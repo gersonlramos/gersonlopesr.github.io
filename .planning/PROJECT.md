@@ -15,11 +15,11 @@ Os case studies de projetos precisam comunicar claramente a capacidade técnica 
 - [x] Visitante consegue entender rapidamente quem é o profissional e sua proposta de valor (seção "Sobre") — Validated in Phase 02: core-narrative-pages
 - [x] Visitante consegue ver a trajetória profissional/experiência (resumo tipo CV) — Validated in Phase 02: core-narrative-pages
 - [x] Visitante consegue entrar em contato ou encontrar links para outros perfis (LinkedIn, GitHub, Kaggle, e-mail) — Validated in Phase 02: core-narrative-pages
+- [x] Visitante consegue navegar por uma galeria/lista de projetos — Validated in Phase 03: case-study-template-project-content
+- [x] Visitante consegue abrir um case study detalhado de cada projeto (problema, abordagem, tecnologias, resultado/impacto) — Validated in Phase 03: case-study-template-project-content
 
 ### Active
 
-- [ ] Visitante consegue navegar por uma galeria/lista de projetos
-- [ ] Visitante consegue abrir um case study detalhado de cada projeto (problema, abordagem, tecnologias, resultado/impacto)
 - [ ] Site é responsivo (funciona bem em mobile e desktop)
 - [ ] Site é hospedado via GitHub Pages
 
@@ -52,7 +52,8 @@ Os case studies de projetos precisam comunicar claramente a capacidade técnica 
 | Blog adiado para v2 | Foco do v1 é mostrar projetos existentes rapidamente; blog é trabalho contínuo separado | — Pending |
 | Idioma do conteúdo: Inglês | Assunção do Claude (usuário não respondeu à pergunta) — maximiza alcance internacional, mas pode ser trocado facilmente | ⚠️ Revisit |
 | Stack: Astro + MDX + Tailwind v4 | Recomendação da pesquisa (STACK.md) — case studies tipados, deploy oficial via GitHub Actions. Assunção do Claude, não confirmada | ⚠️ Revisit |
-| Diferenciais v1: diagramas de arquitetura (DE), 1 demo externo interativo, CV em PDF | Baixo custo/alto valor segundo FEATURES.md; assunção do Claude na ausência de resposta | ⚠️ Revisit |
+| Diferenciais v1: diagramas de arquitetura (DE), 1 demo externo interativo, CV em PDF | Baixo custo/alto valor segundo FEATURES.md; assunção do Claude na ausência de resposta | ✅ Entregue na Phase 03 (3 diagramas SVG estáticos, demo interativo do Analise_cenarios já ao vivo, CV em PDF na Phase 02) |
+| Projetos de case study: Analise_cenarios (flagship), redshift-dbt, SQL_PySpark_Translator, Sales_Real_Time, Postgres-Clean-Process-SuperStore | Pesquisa da Phase 03 confirmou que os projetos mais fortes do currículo (Stellantis, Pottencial Seguros) são trabalho de cliente sem repositório público; os 5 escolhidos são reais, públicos e verificáveis no GitHub (github.com/gersonlramos) | ✅ Entregue na Phase 03 |
 
 ## Evolution
 
@@ -73,7 +74,7 @@ This document evolves at phase transitions and milestone boundaries.
 
 ## Current State
 
-Phase 02 (core-narrative-pages) complete — homepage now has real hero/about copy with explicit hybrid Data Scientist + Data Engineer positioning, a CV-style Experience section backed by the user's actual work history, working resume PDF downloads (EN/PT), and real profile/contact links (LinkedIn, GitHub, Kaggle, email), all verified live on GitHub Pages. Next: Phase 03 (case study template & project content).
+Phase 03 (case-study-template-project-content) complete — the site now has a Projects gallery and 5 real case studies (Analise_cenarios flagship + redshift-dbt, SQL_PySpark_Translator, Sales_Real_Time, Postgres-Clean-Process-SuperStore), each following the problem→approach→impact template with explicit business/practical impact framing, static architecture diagrams for the 3 Data Engineering projects, links out to real GitHub repos, and a working externally-hosted interactive demo for the flagship. A broken GitHub profile link (wrong username) discovered during this phase was also fixed site-wide. Next: Phase 04 (polish, performance & launch).
 
 ---
-*Last updated: 2026-07-04 after Phase 02 completion*
+*Last updated: 2026-07-04 after Phase 03 completion*
