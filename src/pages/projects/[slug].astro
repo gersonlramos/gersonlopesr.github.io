@@ -32,7 +32,7 @@ const baseUrl = import.meta.env.BASE_URL;
 
     {project.data.diagramPath && (
       <img
-        src={`${baseUrl}${project.data.diagramPath.replace(/^\//, '')}`}
+        src={`${baseUrl}/${project.data.diagramPath.replace(/^\//, '')}`}
         alt={`${project.data.title} architecture diagram`}
         class="rounded border border-border"
       />
