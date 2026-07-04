@@ -77,7 +77,7 @@ Plans:
 Plans:
 
 - [x] 03-01-PLAN.md — Schema extension, GitHub link fix, Projects gallery + case study routes (infrastructure)
-- [ ] 03-02-PLAN.md — Flagship DE case study: Analise_cenarios (diagram + content + PROJ-06 demo link)
+- [x] 03-02-PLAN.md — Flagship DE case study: Analise_cenarios (diagram + content + PROJ-06 demo link)
 - [ ] 03-03-PLAN.md — DE case studies: redshift-dbt + SQL_PySpark_Translator (diagrams + content)
 - [ ] 03-04-PLAN.md — DS case studies: Sales_Real_Time + Postgres-Clean-Process-SuperStore (content)
 - [ ] 03-05-PLAN.md — Cross-project verification + human review checkpoint
@@ -106,5 +106,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | ---------------------------------------- | -------------- | ----------- | ---------- |
 | 1. Foundation & Deployment Pipeline      | 4/4            | Completed   | 2026-07-03 |
 | 2. Core Narrative Pages                  | 4/4 | Complete    | 2026-07-04 |
-| 3. Case Study Template & Project Content | 1/5 | In Progress|  |
+| 3. Case Study Template & Project Content | 2/5 | In Progress|  |
 | 4. Polish, Performance & Launch          | 0/TBD          | Not started | -          |
