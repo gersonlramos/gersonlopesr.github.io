@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 260" role="img" aria-labelledby="title desc">
+  <title id="title">Medallion-style dbt pipeline on Redshift</title>
+  <desc id="desc">Raw Sources flow into Staging Models, then Intermediate Models, then Marts on Amazon Redshift.</desc>
+  <rect x="0" y="0" width="920" height="260" fill="#0a0e14" />
+
+  <!-- Box 1: Raw Sources -->
+  <rect x="20" y="85" width="190" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="115" y="122" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Raw Sources</text>
+  <text x="115" y="146" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">8 Northwind tables</text>
+
+  <!-- Arrow 1 -->
+  <line x1="210" y1="130" x2="250" y2="130" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Box 2: Staging Models -->
+  <rect x="250" y="85" width="190" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="345" y="122" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Staging Models</text>
+  <text x="345" y="146" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">dedup, type casting</text>
+
+  <!-- Arrow 2 -->
+  <line x1="440" y1="130" x2="480" y2="130" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Box 3: Intermediate Models -->
+  <rect x="480" y="85" width="190" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="575" y="122" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Intermediate Models</text>
+  <text x="575" y="146" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">enrichment, joins</text>
+
+  <!-- Arrow 3 -->
+  <line x1="670" y1="130" x2="710" y2="130" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Box 4: Marts -->
+  <rect x="710" y="85" width="190" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="805" y="122" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Marts</text>
+  <text x="805" y="146" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">business-ready tables (Redshift)</text>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#22d3ee" />
+    </marker>
+  </defs>
+</svg>

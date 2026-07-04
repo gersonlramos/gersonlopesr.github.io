@@ -1,0 +1,23 @@
+---
+title: "Medallion-Style dbt Pipeline on Redshift"
+summary: "8-source dbt transformation pipeline on AWS Redshift applying medallion-style layering to the Northwind dataset."
+category: "data-engineering"
+impactSummary: "Demonstrates, on a portable public dataset, the same medallion-architecture transformation pattern (raw -> cleaned -> modeled layers) used in production at Pottencial Seguros, making the technique publicly showcase-able without exposing client data."
+stack: ["dbt", "Amazon Redshift", "SQL"]
+role: "Sole developer"
+repoUrl: "https://github.com/gersonlramos/redshift-dbt"
+diagramPath: "/projects/redshift-dbt/diagram.svg"
+order: 2
+---
+
+## Problem
+
+Raw Northwind data arrives spread across 8 separate source tables with inconsistent types, duplicate records, and no business-ready layer for analytics. Without a structured transformation pipeline, any downstream reporting or analysis has to re-derive the same cleaning and joining logic from scratch every time, which doesn't scale and invites inconsistent results across consumers.
+
+## Approach
+
+The pipeline is built as a set of dbt models against Amazon Redshift, organized into three layers: staging models deduplicate the 8 raw sources and cast types consistently, intermediate models enrich and join those staging tables into wider business entities, and marts expose the final business-ready tables that analytics consumers query directly. Each layer only depends on the layer directly below it, keeping lineage traceable end to end (see diagram above).
+
+## Impact
+
+This is a self-directed practice project, not a disclosed employer engagement, so its impact is framed accordingly: it demonstrates the same medallion-architecture discipline (raw -> staging -> intermediate -> marts) used in production at Pottencial Seguros, already referenced in the Experience section, applied here to a portable public dataset specifically so the technique can be shown publicly without exposing real client data or infrastructure. The goal is proving fluency with the pattern, not claiming a fabricated business outcome.
