@@ -39,6 +39,12 @@ Out of scope in this phase: narrative/about/experience content (Phase 2, done), 
 - Diagram tool choice (Mermaid vs. Excalidraw vs. draw.io export) — pick whichever fits the Astro build pipeline best
 - Card visual design details within the existing dark tech theme tokens
 
+### Confirmed After Research (2026-07-04)
+
+- **D-09:** The user's real GitHub account is `github.com/gersonlramos` (NOT `github.com/gersonlopesr`, which 404s). Research found `src/components/Footer.astro` currently links to the wrong, broken account. Fix this as an early Phase 3 task — confirmed by user.
+- **D-10:** Flagship interactive demo (PROJ-06) is confirmed as `Analise_cenarios` (live demo at `https://gersonlramos.github.io/Analise_cenarios/`, already working, zero new deployment needed). The repo names the Stellantis client explicitly, already disclosed in the Phase 2 Experience section — user explicitly approved building a full case study around it, no additional publish checkpoint required.
+- **D-11:** Featured projects (from research's GitHub repo audit, 3 DE / 2 DS, matching D-01/D-02): `Analise_cenarios` (DE, flagship), `redshift-dbt` (DE), `SQL_PySpark_Translator` (DE), `Sales_Real_Time` (DS), `Postgres-Clean-Process-SuperStore` (DS). See 03-RESEARCH.md's GitHub Repository Audit for full evidence per project.
+
 </decisions>
 
 <canonical_refs>
