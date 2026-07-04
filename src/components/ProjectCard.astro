@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+const categoryLabel = project.data.category === 'data-engineering' ? 'Data Engineering' : 'Data Science';
+---
+
+<a
+  href={`${baseUrl}projects/${project.id}/`}
+  class="flex flex-col gap-3 rounded border border-border bg-surface p-6 hover:border-accent"
+>
+  {project.data.thumbnail && (
+    <img
+      src={`${baseUrl}${project.data.thumbnail.replace(/^\//, '')}`}
+      alt={`${project.data.title} thumbnail`}
+      class="rounded border border-border"
+    />
+  )}
+  <span class="w-fit rounded border border-border px-2 py-1 font-mono text-xs text-accent">{categoryLabel}</span>
+  <h2 class="text-lg font-semibold leading-snug text-foreground">{project.data.title}</h2>
+  <p class="text-base leading-normal text-muted-foreground">{project.data.summary}</p>
+  <ul class="flex flex-wrap gap-2">
+    {project.data.stack.map((tech) => (
+      <li class="rounded border border-border px-2 py-1 font-mono text-xs text-accent">{tech}</li>
+    ))}
+  </ul>
+</a>
