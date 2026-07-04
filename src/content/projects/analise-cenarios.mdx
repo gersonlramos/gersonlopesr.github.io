@@ -1,0 +1,24 @@
+---
+title: "Data-Lake Migration Scenario Planner"
+summary: "Interactive scenario simulator comparing squad-allocation timelines for a large-scale data-lake migration."
+category: "data-engineering"
+impactSummary: "Gave the Stellantis migration team a way to compare squad-allocation timelines before committing to a delivery plan, directly supporting the same forecasting work already disclosed in the CompassUOL/Stellantis GCP-to-AWS migration experience."
+stack: ["Python", "Pandas", "Plotly", "GitHub Pages"]
+role: "Sole developer"
+repoUrl: "https://github.com/gersonlramos/Analise_cenarios"
+diagramPath: "/projects/analise-cenarios/diagram.svg"
+demoUrl: "https://gersonlramos.github.io/Analise_cenarios/"
+order: 1
+---
+
+## Problem
+
+The Stellantis data-lake migration spanned 9 distinct domains, each tracked as its own set of Jira stories exported to raw `.txt` files. Before this tool existed, comparing squad-allocation timelines across domains meant manually cross-referencing these exports story by story — slow, error-prone, and impossible to iterate on quickly when the migration plan needed to change. Stakeholders had no fast way to ask "what happens to the delivery timeline if we shift a squad from Domain A to Domain B?" without redoing that manual pass from scratch.
+
+## Approach
+
+The pipeline (shown above) starts by parsing the 9 domain-specific Jira `.txt` exports with Python and Pandas into a unified, structured dataset of stories, estimates, and dependencies. On top of that dataset, a scenario simulation layer encodes squad-allocation rules, letting different allocation strategies be modeled and compared without touching the underlying data. Each simulated scenario is rendered as a comparative Gantt timeline with Plotly, and the whole tool ships as a static, zero-backend site deployed to GitHub Pages — so the migration team could open a link and explore trade-offs directly, with no environment setup required.
+
+## Impact
+
+This simulator gave the Stellantis migration team a concrete way to compare squad-allocation timelines side by side before committing to a delivery plan, rather than relying on manual spreadsheet cross-referencing across 9 domains. That capability directly supported the same delivery forecasting work already disclosed in the CompassUOL/Stellantis GCP-to-AWS migration experience — turning a slow, error-prone planning exercise into a fast, repeatable comparison the team could run whenever the allocation plan needed to change.
