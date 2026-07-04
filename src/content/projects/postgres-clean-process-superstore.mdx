@@ -1,0 +1,23 @@
+---
+title: "Data Quality & Cleaning Pipeline (SuperStore)"
+summary: "PostgreSQL data-cleaning and quality pipeline applying deduplication, null imputation, and ranking analysis to the SuperStore retail dataset, backed by a documented ERD."
+category: "data-science"
+impactSummary: "Demonstrates the same data-quality discipline (schema design, deduplication, null-handling, validation queries) behind the Pet Premium and AI Studio experience bullets, applied here to a public dataset with a fully documented ERD."
+stack: ["PostgreSQL", "SQL"]
+role: "Sole developer"
+repoUrl: "https://github.com/gersonlramos/Postgres-Clean-Process-SuperStore"
+diagramPath: "/projects/postgres-clean-process-superstore/diagram.png"
+order: 5
+---
+
+## Problem
+
+Raw retail transaction data from the SuperStore dataset has duplicates, nulls, and no documented schema — making it unreliable for downstream analysis until it's properly modeled and cleaned.
+
+## Approach
+
+A documented entity-relationship diagram (shown above) grounds a PostgreSQL pipeline that deduplicates records, imputes missing values, and runs ranking and validation queries to confirm the cleaned data is analysis-ready.
+
+## Impact
+
+This demonstrates the same data-quality discipline — schema design, deduplication, null-handling, and validation — behind the disclosed Pet Premium and AI Studio experience bullets, shown here on a public dataset with a fully documented, inspectable ERD rather than claimed as production work.

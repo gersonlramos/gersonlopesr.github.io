@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-02-PLAN.md and 03-03-PLAN.md (parallel wave)
-last_updated: "2026-07-04T21:55:48.197Z"
+stopped_at: Completed 03-02-PLAN.md, 03-03-PLAN.md, and 03-04-PLAN.md (parallel wave)
+last_updated: "2026-07-04T21:56:36.289Z"
 last_activity: 2026-07-04
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 13
-  completed_plans: 11
+  completed_plans: 12
   percent: 100
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-07-03)
 ## Current Position
 
 Phase: 03 (case-study-template-project-content) — EXECUTING
-Plan: 4 of 5
+Plan: 5 of 5
 Status: Ready to execute
 Last activity: 2026-07-04
 
@@ -60,6 +60,7 @@ _Updated after each plan completion_
 | Phase 03 P01 | 15min | 3 tasks | 6 files |
 | Phase 03 P02 | 10min | 2 tasks | 2 files |
 | Phase 03 P03 | 25min | 2 tasks | 4 files |
+| Phase 03 P04 | 20min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -80,6 +81,7 @@ Recent decisions affecting current work:
 - [Phase 03]: Fixed broken GitHub profile link (gersonlopesr -> gersonlramos) in Footer per D-09; extended projects schema with category/impactSummary/diagramPath/demoUrl + superRefine enforcing diagram for data-engineering entries
 - [Phase 03]: [Phase 03-02] Authored Analise_cenarios flagship case study: static SVG pipeline diagram + Problem/Approach/Impact MDX content citing the disclosed Stellantis migration forecasting work per D-10
 - [Phase 03]: [Phase 03-03] Authored redshift-dbt and sql-pyspark-translator case studies using the self-directed impact-framing pattern (ties to already-disclosed Pottencial Seguros / Airflow-Iceberg-Spark experience, no fabricated business metrics)
+- [Phase 03]: [Phase 03-04] Authored DS case studies for Sales_Real_Time and Postgres-Clean-Process-SuperStore with real reused screenshot/ERD images; fixed a site-wide BASE_URL path-concatenation bug in ProjectCard.astro/[slug].astro/Nav.astro found during verification
 
 ### Pending Todos
 
@@ -93,6 +95,6 @@ None currently open. Plan 02-04's Task 3 (checkpoint:human-verify) was approved 
 
 ## Session Continuity
 
-Last session: 2026-07-04T21:55:48.171Z
-Stopped at: Completed 03-02-PLAN.md and 03-03-PLAN.md (parallel wave)
+Last session: 2026-07-04T21:56:36.267Z
+Stopped at: Completed 03-02-PLAN.md, 03-03-PLAN.md, and 03-04-PLAN.md (parallel wave)
 Resume file: None

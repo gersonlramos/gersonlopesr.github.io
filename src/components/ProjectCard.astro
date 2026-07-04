@@ -11,12 +11,12 @@ const categoryLabel = project.data.category === 'data-engineering' ? 'Data Engin
 ---
 
 <a
-  href={`${baseUrl}projects/${project.id}/`}
+  href={`${baseUrl}/projects/${project.id}/`}
   class="flex flex-col gap-3 rounded border border-border bg-surface p-6 hover:border-accent"
 >
   {project.data.thumbnail && (
     <img
-      src={`${baseUrl}${project.data.thumbnail.replace(/^\//, '')}`}
+      src={`${baseUrl}/${project.data.thumbnail.replace(/^\//, '')}`}
       alt={`${project.data.title} thumbnail`}
       class="rounded border border-border"
     />
