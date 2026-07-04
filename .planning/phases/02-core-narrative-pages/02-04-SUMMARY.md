@@ -38,16 +38,16 @@ key-decisions:
 
 patterns-established: []
 
-requirements-completed: []
+requirements-completed: [NARR-01, NARR-02, NARR-03, NARR-04]
 
 # Metrics
 duration: ~7min (content-fix session; tasks 1-2 were executed silently as part of the 02-03 completion deploy prior to this session, no separate duration tracked)
-completed: 2026-07-03
+completed: 2026-07-04
 ---
 
 # Phase 02 Plan 04: Publish and Verify Live Narrative Content Summary
 
-**Live deployment confirmed on GitHub Pages with production smoke checks passing; a content-accuracy gap found during the Task 3 human-verify checkpoint (placeholder employer names and wrong display name) was fixed, redeployed, and re-verified — checkpoint sign-off is still pending final user review.**
+**Live deployment confirmed on GitHub Pages with production smoke checks passing; a content-accuracy gap found during the Task 3 human-verify checkpoint (placeholder employer names and wrong display name) was fixed, redeployed, re-verified, and the corrected live site has now received the user's explicit "approved" sign-off — plan 02-04 and Phase 2 are complete.**
 
 ## Performance
 
@@ -66,6 +66,7 @@ completed: 2026-07-03
 - Verified locally (`npm run build`, `dist/index.html` inspection), committed, pushed to `main`, and confirmed the redeploy on GitHub Actions
 - Hit and resolved a transient GitHub Pages deploy failure ("Deployment failed, try again later.") on the first push — same class of issue as the prior `654894b chore(ci): retry pages deploy` fix — resolved via an empty retry commit, which redeployed successfully
 - Re-ran production smoke checks against the live site post-redeploy: home/resume PDFs return 200, "Gerson Ramos" appears 4x in served HTML (H1, nav, footer, title), "Gerson Lopes" and "TBD (confirm employer)" do not appear, all 5 real employer names are present, footer profile links intact
+- User re-reviewed the corrected live site at https://gersonlramos.github.io/gersonlopesr.github.io and responded "approved", confirming the Experience section and About section now correctly reflect their real resume/name — Task 3 (checkpoint:human-verify) is now closed
 
 ## Task Commits
 
@@ -75,8 +76,9 @@ This session's content-fix work (triggered by the Task 3 checkpoint finding) was
 
 1. **Content fix: correct experience data and display name** - `7ea321c` (fix)
 2. **Retry transient GitHub Pages deploy failure** - `b1ab2ab` (chore, empty commit)
+3. **Task 3 (Manual narrative review checkpoint)** - no code change; user reviewed the corrected live site and replied "approved" (task closed, no commit — checkpoint approval is a state-only event)
 
-**Plan metadata:** pending (this commit, created after this summary)
+**Plan metadata:** this commit, created after this summary update
 
 ## Files Created/Modified
 - `src/data/experience.ts` - Replaced all 3 placeholder entries with 5 real employment entries sourced from the user's resume; removed the `PLACEHOLDER-confirm-phase-2` comment block
@@ -89,7 +91,7 @@ This session's content-fix work (triggered by the Task 3 checkpoint finding) was
 ## Decisions Made
 - Treated this as a content-correction fix inside plan 02-04 rather than spawning a new plan, since the defect was discovered at, and directly blocks, this plan's own Task 3 checkpoint sign-off
 - Condensed the resume's bullet-point impact lists into 2-3 concise, portfolio-style bullets per role rather than pasting resume text verbatim, consistent with the project's Core Value (communicate "why" and "impact," not a CV dump)
-- Did not mark Task 3 (checkpoint:human-verify) as approved — the user must review the corrected live site and explicitly confirm before this plan is considered complete
+- Task 3 (checkpoint:human-verify) is now marked approved: the user reviewed the corrected live site and replied "approved", confirming the Experience section and About section correctly reflect their real resume/name
 
 ## Deviations from Plan
 
@@ -124,20 +126,21 @@ None - no external service configuration required for this fix.
 
 ## Next Phase Readiness
 
-**Task 3 (checkpoint:human-verify) of plan 02-04 remains OPEN.** The user must re-review the live site now that the content fix is deployed and explicitly confirm:
+**Task 3 (checkpoint:human-verify) of plan 02-04 is CLOSED — approved.** The user re-reviewed the live site after the content fix was deployed and confirmed:
 1. Homepage DS+DE positioning and about section read correctly (matches real resume: 5+ years, Python/Advanced SQL, Classic ML/DL/GenAI, AWS SageMaker/Bedrock/Glue, GCP-to-AWS migration)
 2. Experience section shows the 5 real roles (CompassUOL/Stellantis, Outlier AI, CompassUOL/Pottencial Seguros, CompassUOL AI Studio, Pet Premium Distribuidora) with correct periods and no placeholder text
 3. Displayed name reads "Gerson Ramos" everywhere (H1, nav, footer, page titles)
 4. Resume PDF link still downloads correctly
 5. Contact links remain visible in the persistent shell
 
-Live site to review: https://gersonlramos.github.io/gersonlopesr.github.io
+Live site reviewed: https://gersonlramos.github.io/gersonlopesr.github.io
+User's exact response: "approved"
 
-Plan 02-04 (and Phase 2) should NOT be marked complete in ROADMAP.md/STATE.md until the user provides explicit sign-off on this re-review.
+Plan 02-04 is complete. Phase 2 (Core Narrative Pages) is now complete — all 4 plans finished, all NARR-01..04 requirements satisfied on the live site. Phase 3 (Case Study Template & Project Content) can begin.
 
 ---
 *Phase: 02-core-narrative-pages*
-*Completed: 2026-07-03 (content fix only — checkpoint task 3 still pending user sign-off)*
+*Completed: 2026-07-04 (Task 3 checkpoint approved by user)*
 
 ## Self-Check: PASSED
 
