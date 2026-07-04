@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-01-PLAN.md
-last_updated: "2026-07-04T21:46:27.503Z"
+stopped_at: Completed 03-04-PLAN.md
+last_updated: "2026-07-04T21:56:36.289Z"
 last_activity: 2026-07-04
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 13
-  completed_plans: 9
+  completed_plans: 10
   percent: 100
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-07-03)
 ## Current Position
 
 Phase: 03 (case-study-template-project-content) — EXECUTING
-Plan: 2 of 5
+Plan: 3 of 5
 Status: Ready to execute
 Last activity: 2026-07-04
 
@@ -58,6 +58,7 @@ _Updated after each plan completion_
 | Phase 02 P03 | 15min | 1 tasks | 5 files |
 | Phase 02 P04 | ~7min | 3 tasks | 6 files |
 | Phase 03 P01 | 15min | 3 tasks | 6 files |
+| Phase 03 P04 | 20min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -76,6 +77,7 @@ Recent decisions affecting current work:
 - [Phase 02-core-narrative-pages, 02-04]: Corrected placeholder experience data and wrong display name ("Gerson Lopes" -> "Gerson Ramos") found during the Task 3 human-verify checkpoint; fixed content sourced from the user's real resume, redeployed, and re-verified live
 - [Phase 02-core-narrative-pages, 02-04]: User approved the corrected live narrative content (Task 3 checkpoint) after the experience/name content fix; Phase 2 is now complete (4/4 plans)
 - [Phase 03]: Fixed broken GitHub profile link (gersonlopesr -> gersonlramos) in Footer per D-09; extended projects schema with category/impactSummary/diagramPath/demoUrl + superRefine enforcing diagram for data-engineering entries
+- [Phase 03]: [Phase 03-04] Authored DS case studies for Sales_Real_Time and Postgres-Clean-Process-SuperStore with real reused screenshot/ERD images; fixed a site-wide BASE_URL path-concatenation bug in ProjectCard.astro/[slug].astro/Nav.astro found during verification
 
 ### Pending Todos
 
@@ -89,6 +91,6 @@ None currently open. Plan 02-04's Task 3 (checkpoint:human-verify) was approved 
 
 ## Session Continuity
 
-Last session: 2026-07-04T21:46:27.475Z
-Stopped at: Completed 03-01-PLAN.md
+Last session: 2026-07-04T21:56:36.267Z
+Stopped at: Completed 03-04-PLAN.md
 Resume file: None
