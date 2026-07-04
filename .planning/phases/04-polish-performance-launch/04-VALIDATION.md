@@ -1,8 +1,8 @@
 ---
 phase: 4
 slug: polish-performance-launch
-status: draft
-nyquist_compliant: false
+status: planned
+nyquist_compliant: true
 wave_0_complete: false
 created: 2026-07-04
 ---
@@ -71,6 +71,6 @@ Existing infrastructure covers all phase requirements. No test framework install
 - [x] Wave 0 covers all MISSING references (none needed — build/script/CLI gates suffice)
 - [x] No watch-mode flags
 - [x] Feedback latency < 60s
-- [ ] `nyquist_compliant: true` set in frontmatter (set by planner once plans are finalized)
+- [x] `nyquist_compliant: true` set in frontmatter (set by planner once plans are finalized)
 
-**Approval:** pending
+**Approval:** planner-finalized — 5 plans across 3 waves created 2026-07-04, matching this validation contract.

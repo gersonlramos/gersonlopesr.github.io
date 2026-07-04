@@ -94,8 +94,16 @@ Plans:
 2. Images are compressed and correctly sized so pages load quickly
 3. Every link on the site has been checked and confirmed working (no dead links)
 4. Site includes SEO meta tags (meta description, Open Graph, sitemap) verifiable via page source
-   **Plans**: TBD
-   **UI hint**: yes
+   **Plans**: 5 plans
+
+Plans:
+
+- [ ] 04-01-PLAN.md — Fix Nav.astro mobile overflow (flex-wrap responsive fix)
+- [ ] 04-02-PLAN.md — Recompress oversized project images (Sharp) + width/height/lazy-load attributes
+- [ ] 04-03-PLAN.md — SEO infrastructure: meta description, Open Graph/Twitter tags, sitemap, robots.txt
+- [ ] 04-04-PLAN.md — Deploy Wave 1 changes + live recursive link check (linkinator)
+- [ ] 04-05-PLAN.md — Final automated spot-checks + comprehensive human-verify checkpoint (v1 launch gate)
+      **UI hint**: yes
 
 ## Progress
 
