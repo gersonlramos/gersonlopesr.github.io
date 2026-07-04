@@ -20,8 +20,8 @@
 
 ### Projetos & Case Studies
 
-- [ ] **PROJ-01**: Visitante consegue navegar por uma galeria/lista de todos os projetos com tags de tecnologia visíveis
-- [ ] **PROJ-02**: Visitante consegue abrir uma página de case study dedicada para cada projeto, seguindo o template problema→abordagem→impacto
+- [x] **PROJ-01**: Visitante consegue navegar por uma galeria/lista de todos os projetos com tags de tecnologia visíveis
+- [x] **PROJ-02**: Visitante consegue abrir uma página de case study dedicada para cada projeto, seguindo o template problema→abordagem→impacto
 - [ ] **PROJ-03**: Cada case study declara explicitamente o impacto de negócio/prático (não apenas uma métrica técnica)
 - [ ] **PROJ-04**: Case studies de Engenharia de Dados incluem um diagrama estático de arquitetura/pipeline
 - [ ] **PROJ-05**: Cada case study linka para o código/notebook completo no GitHub em vez de embutí-lo
@@ -71,8 +71,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | NARR-02 | Phase 2 | Complete |
 | NARR-03 | Phase 2 | Complete |
 | NARR-04 | Phase 2 | Complete |
-| PROJ-01 | Phase 3 | Pending |
-| PROJ-02 | Phase 3 | Pending |
+| PROJ-01 | Phase 3 | Complete |
+| PROJ-02 | Phase 3 | Complete |
 | PROJ-03 | Phase 3 | Pending |
 | PROJ-04 | Phase 3 | Pending |
 | PROJ-05 | Phase 3 | Pending |
