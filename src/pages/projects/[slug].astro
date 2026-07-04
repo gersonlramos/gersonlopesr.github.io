@@ -1,0 +1,51 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title={`${project.data.title} — Gerson Ramos`}>
+  <article class="mx-auto flex max-w-3xl flex-col gap-6 px-4 py-12 sm:py-16">
+    <header class="flex flex-col gap-2">
+      <span class="w-fit rounded border border-border px-2 py-1 font-mono text-xs text-accent">
+        {project.data.category === 'data-engineering' ? 'Data Engineering' : 'Data Science'}
+      </span>
+      <h1 class="text-2xl font-semibold leading-tight text-foreground">{project.data.title}</h1>
+      <p class="text-base leading-normal text-accent">{project.data.impactSummary}</p>
+      <ul class="flex flex-wrap gap-2">
+        {project.data.stack.map((tech) => (
+          <li class="rounded border border-border px-2 py-1 font-mono text-xs text-muted-foreground">{tech}</li>
+        ))}
+      </ul>
+    </header>
+
+    {project.data.diagramPath && (
+      <img
+        src={`${baseUrl}${project.data.diagramPath.replace(/^\//, '')}`}
+        alt={`${project.data.title} architecture diagram`}
+        class="rounded border border-border"
+      />
+    )}
+
+    <div class="prose prose-invert max-w-none text-foreground">
+      <Content />
+    </div>
+
+    <footer class="flex flex-wrap gap-4 border-t border-border pt-6">
+      <a href={project.data.repoUrl} class="text-accent hover:underline">View code on GitHub &rarr;</a>
+      {project.data.notebookUrl && <a href={project.data.notebookUrl} class="text-accent hover:underline">View notebook &rarr;</a>}
+      {project.data.demoUrl && <a href={project.data.demoUrl} class="text-accent hover:underline">Try the live demo &rarr;</a>}
+    </footer>
+  </article>
+</BaseLayout>
