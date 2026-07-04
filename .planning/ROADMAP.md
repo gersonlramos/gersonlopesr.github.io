@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Deployment Pipeline** - Astro/MDX/Tailwind project scaffold deploys automatically to a working GitHub Pages URL with a persistent base layout
 - [x] **Phase 2: Core Narrative Pages** - Visitor understands who the professional is, their experience, and how to reach them (completed 2026-07-04)
-- [ ] **Phase 3: Case Study Template & Project Content** - Visitor can browse and read fully-realized case studies that prove technical capability and reasoning
+- [x] **Phase 3: Case Study Template & Project Content** - Visitor can browse and read fully-realized case studies that prove technical capability and reasoning (completed 2026-07-04)
 - [ ] **Phase 4: Polish, Performance & Launch** - Site is fast, responsive, discoverable, and fully verified before public launch
 
 ## Phase Details
@@ -80,7 +80,7 @@ Plans:
 - [x] 03-02-PLAN.md — Flagship DE case study: Analise_cenarios (diagram + content + PROJ-06 demo link)
 - [x] 03-03-PLAN.md — DE case studies: redshift-dbt + SQL_PySpark_Translator (diagrams + content)
 - [x] 03-04-PLAN.md — DS case studies: Sales_Real_Time + Postgres-Clean-Process-SuperStore (content)
-- [ ] 03-05-PLAN.md — Cross-project verification + human review checkpoint
+- [x] 03-05-PLAN.md — Cross-project verification + human review checkpoint
       **UI hint**: yes
 
 ### Phase 4: Polish, Performance & Launch
@@ -106,5 +106,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | ---------------------------------------- | -------------- | ----------- | ---------- |
 | 1. Foundation & Deployment Pipeline      | 4/4            | Completed   | 2026-07-03 |
 | 2. Core Narrative Pages                  | 4/4 | Complete    | 2026-07-04 |
-| 3. Case Study Template & Project Content | 4/5 | In Progress|  |
+| 3. Case Study Template & Project Content | 5/5 | Complete   | 2026-07-04 |
 | 4. Polish, Performance & Launch          | 0/TBD          | Not started | -          |
