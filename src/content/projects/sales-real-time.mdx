@@ -1,0 +1,23 @@
+---
+title: "Real-Time Pet-Product Sales Monitoring Dashboard"
+summary: "Power BI dashboard backed by a simulated PostgreSQL sales database, tracking KPIs, payment-type distribution, and per-seller performance for pet-product sales."
+category: "data-science"
+impactSummary: "Mirrors the executive KPI dashboards built for Pet Premium Distribuidora in production, reconstructed end-to-end here (schema, simulated transactional data, Power BI report) to publicly demonstrate the same sales-monitoring pattern used to support real executive decision-making."
+stack: ["PostgreSQL", "Power BI", "SQL"]
+role: "Sole developer"
+repoUrl: "https://github.com/gersonlramos/Sales_Real_Time"
+thumbnail: "/projects/sales-real-time/thumbnail.png"
+order: 4
+---
+
+## Problem
+
+Without a consolidated view, tracking pet-product sales KPIs, payment-type mix, and per-seller performance requires manual spreadsheet work pulled from multiple transactional exports. That kind of ad hoc reporting doesn't scale and makes it hard for decision-makers to spot trends in real time.
+
+## Approach
+
+A simulated PostgreSQL transactional database models the sales schema (orders, sellers, payment methods) and feeds a Power BI report. The report surfaces KPI cards, a payment-type distribution chart, and a per-seller ranking table, giving a single place to monitor sales health at a glance.
+
+## Impact
+
+This reconstructs, end-to-end and on non-confidential simulated data, the same executive KPI dashboard pattern already disclosed as delivered in production at Pet Premium Distribuidora — publicly demonstrating the skill without exposing real sales data. The goal isn't a specific revenue figure; it's showing the full pipeline (schema design through report delivery) that supports that kind of executive decision-making.
