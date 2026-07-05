@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 const { Content } = await render(project);
 const baseUrl = import.meta.env.BASE_URL;
+const isPngDiagram = project.data.diagramPath?.endsWith('.png');
 ---
 
 <BaseLayout title={`${project.data.title} — Gerson Ramos`}>
@@ -34,6 +35,10 @@ const baseUrl = import.meta.env.BASE_URL;
       <img
         src={`${baseUrl}/${project.data.diagramPath.replace(/^\//, '')}`}
         alt={`${project.data.title} architecture diagram`}
+        width={isPngDiagram ? '1550' : undefined}
+        height={isPngDiagram ? '1232' : undefined}
+        loading="lazy"
+        decoding="async"
         class="rounded border border-border"
       />
     )}

@@ -18,6 +18,10 @@ const categoryLabel = project.data.category === 'data-engineering' ? 'Data Engin
     <img
       src={`${baseUrl}/${project.data.thumbnail.replace(/^\//, '')}`}
       alt={`${project.data.title} thumbnail`}
+      width="950"
+      height="541"
+      loading="lazy"
+      decoding="async"
       class="rounded border border-border"
     />
   )}
