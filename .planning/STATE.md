@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-01-PLAN.md
-last_updated: "2026-07-05T00:16:19.616Z"
+stopped_at: Completed 04-02-PLAN.md
+last_updated: "2026-07-05T00:21:50.957Z"
 last_activity: 2026-07-05
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 18
-  completed_plans: 14
+  completed_plans: 15
   percent: 100
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-07-03)
 ## Current Position
 
 Phase: 04 (polish-performance-launch) — EXECUTING
-Plan: 2 of 5
+Plan: 3 of 5
 Status: Ready to execute
 Last activity: 2026-07-05
 
@@ -63,6 +63,7 @@ _Updated after each plan completion_
 | Phase 03 P04 | 20min | 2 tasks | 6 files |
 | Phase 03 P05 | 10min | 2 tasks | 1 files |
 | Phase 04 P01 | 3min | 1 tasks | 1 files |
+| Phase 04 P02 | 7min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -86,6 +87,7 @@ Recent decisions affecting current work:
 - [Phase 03]: [Phase 03-04] Authored DS case studies for Sales_Real_Time and Postgres-Clean-Process-SuperStore with real reused screenshot/ERD images; fixed a site-wide BASE_URL path-concatenation bug in ProjectCard.astro/[slug].astro/Nav.astro found during verification
 - [Phase 03]: [Phase 03-05] Cross-project verification passed all 7 automated structural checks with zero fixes needed; user approved the complete Projects gallery and all 5 case studies on the human-verify checkpoint (exact response: 'approved') -- Phase 3 (Case Study Template & Project Content) is now complete (5/5 plans), all PROJ-01 through PROJ-06 requirements satisfied
 - [Phase 04]: [Phase 04-01] Kept CSS-only flex-wrap fix for Nav.astro mobile overflow rather than a hamburger disclosure pattern -- a 5-link nav doesn't warrant a second interaction pattern, zero-JS philosophy preserved
+- [Phase 04]: [Phase 04-02] Fixed a Sharp double-encode bug in scripts/optimize-images.mjs (the plan's own script content) where the second sharp(buf).toFile() call dropped png quality/compressionLevel options, undoing most of the compression; reapplied the same options on both encode steps to achieve the expected 66%/76% size reduction
 
 ### Pending Todos
 
@@ -99,6 +101,6 @@ None currently open. Plan 03-05's Task 2 (checkpoint:human-verify) was approved 
 
 ## Session Continuity
 
-Last session: 2026-07-05T00:16:19.588Z
-Stopped at: Completed 04-01-PLAN.md
+Last session: 2026-07-05T00:21:50.936Z
+Stopped at: Completed 04-02-PLAN.md
 Resume file: None
