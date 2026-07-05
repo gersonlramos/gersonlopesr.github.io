@@ -17,11 +17,12 @@ Os case studies de projetos precisam comunicar claramente a capacidade técnica 
 - [x] Visitante consegue entrar em contato ou encontrar links para outros perfis (LinkedIn, GitHub, Kaggle, e-mail) — Validated in Phase 02: core-narrative-pages
 - [x] Visitante consegue navegar por uma galeria/lista de projetos — Validated in Phase 03: case-study-template-project-content
 - [x] Visitante consegue abrir um case study detalhado de cada projeto (problema, abordagem, tecnologias, resultado/impacto) — Validated in Phase 03: case-study-template-project-content
+- [x] Site é responsivo (funciona bem em mobile e desktop) — Validated in Phase 04: polish-performance-launch
+- [x] Site é hospedado via GitHub Pages — Validated in Phase 01: foundation-deployment-pipeline (live throughout, hardened/fully verified in Phase 04)
 
 ### Active
 
-- [ ] Site é responsivo (funciona bem em mobile e desktop)
-- [ ] Site é hospedado via GitHub Pages
+None — todos os requisitos v1 foram entregues e validados. v1 está lançado.
 
 ### Out of Scope
 
@@ -47,9 +48,9 @@ Os case studies de projetos precisam comunicar claramente a capacidade técnica 
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Hospedar via GitHub Pages | Já decidido pelo usuário — gratuito, integrado ao GitHub onde os projetos já vivem | — Pending |
-| Estrutura v1: Sobre + Projetos + Experiência + Contato | Cobre o essencial para "vender" capacidades sem inflar escopo; blog fica para v2 | — Pending |
-| Blog adiado para v2 | Foco do v1 é mostrar projetos existentes rapidamente; blog é trabalho contínuo separado | — Pending |
+| Hospedar via GitHub Pages | Já decidido pelo usuário — gratuito, integrado ao GitHub onde os projetos já vivem | ✅ Entregue — site ao vivo em https://gersonlramos.github.io/gersonlopesr.github.io/ |
+| Estrutura v1: Sobre + Projetos + Experiência + Contato | Cobre o essencial para "vender" capacidades sem inflar escopo; blog fica para v2 | ✅ Entregue nas Phases 02-03 |
+| Blog adiado para v2 | Foco do v1 é mostrar projetos existentes rapidamente; blog é trabalho contínuo separado | ✅ Confirmado — fora do escopo v1, mantido como candidato v2 |
 | Idioma do conteúdo: Inglês | Assunção do Claude (usuário não respondeu à pergunta) — maximiza alcance internacional, mas pode ser trocado facilmente | ⚠️ Revisit |
 | Stack: Astro + MDX + Tailwind v4 | Recomendação da pesquisa (STACK.md) — case studies tipados, deploy oficial via GitHub Actions. Assunção do Claude, não confirmada | ⚠️ Revisit |
 | Diferenciais v1: diagramas de arquitetura (DE), 1 demo externo interativo, CV em PDF | Baixo custo/alto valor segundo FEATURES.md; assunção do Claude na ausência de resposta | ✅ Entregue na Phase 03 (3 diagramas SVG estáticos, demo interativo do Analise_cenarios já ao vivo, CV em PDF na Phase 02) |
@@ -74,7 +75,7 @@ This document evolves at phase transitions and milestone boundaries.
 
 ## Current State
 
-Phase 03 (case-study-template-project-content) complete — the site now has a Projects gallery and 5 real case studies (Analise_cenarios flagship + redshift-dbt, SQL_PySpark_Translator, Sales_Real_Time, Postgres-Clean-Process-SuperStore), each following the problem→approach→impact template with explicit business/practical impact framing, static architecture diagrams for the 3 Data Engineering projects, links out to real GitHub repos, and a working externally-hosted interactive demo for the flagship. A broken GitHub profile link (wrong username) discovered during this phase was also fixed site-wide. Next: Phase 04 (polish, performance & launch).
+**v1 is launched.** Phase 04 (polish-performance-launch), the final phase of v1, is complete — the live site (https://gersonlramos.github.io/gersonlopesr.github.io/) is now responsive (Nav no longer overflows on mobile), has its images optimized (two oversized PNGs recompressed ~66-76% with no visible quality loss), includes baseline SEO infrastructure (meta description, Open Graph/Twitter tags, XML sitemap, robots.txt), and had a full site-wide link audit (linkinator, zero broken links). The user completed a comprehensive final walkthrough across all 4 phases (narrative, projects gallery, all 5 case studies, resume downloads, contact links, responsive/SEO fixes) and approved it as launch-ready. All 17 v1 requirements are validated. Next: `/gsd:complete-milestone` to close out v1, or begin scoping v2 (blog, custom domain, analytics, additional demos).
 
 ---
-*Last updated: 2026-07-04 after Phase 03 completion*
+*Last updated: 2026-07-05 after Phase 04 completion — v1 launched*
