@@ -5,10 +5,20 @@ import '../styles/global.css';
 
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
 }
 
-const { title = 'Gerson Ramos — Data Scientist & Data Engineer' } = Astro.props;
+const {
+  title = 'Gerson Ramos — Data Scientist & Data Engineer',
+  description = 'Portfolio of Gerson Ramos, a hybrid Data Scientist and Data Engineer — real-world case studies in ML, analytics, and data pipeline engineering.',
+  image,
+  type = 'website',
+} = Astro.props;
+
 const faviconHref = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -17,7 +27,19 @@ const faviconHref = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={faviconHref} />
+    <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+
+    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
   </head>
   <body class="bg-background text-foreground">
     <Nav />
