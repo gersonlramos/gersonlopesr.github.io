@@ -31,7 +31,7 @@
 
 - [x] **POLISH-01**: Site é responsivo e usável em mobile e desktop
 - [x] **POLISH-02**: Imagens são otimizadas (comprimidas, dimensionadas corretamente) para carregamento rápido
-- [ ] **POLISH-03**: Todos os links do site são verificados como funcionais antes do lançamento
+- [x] **POLISH-03**: Todos os links do site são verificados como funcionais antes do lançamento
 - [x] **POLISH-04**: Site tem tags básicas de SEO (meta description, Open Graph, sitemap)
 
 ## v2 Requirements
@@ -79,7 +79,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PROJ-06 | Phase 3 | Complete |
 | POLISH-01 | Phase 4 | Complete |
 | POLISH-02 | Phase 4 | Complete |
-| POLISH-03 | Phase 4 | Pending |
+| POLISH-03 | Phase 4 | Complete |
 | POLISH-04 | Phase 4 | Complete |
 
 **Coverage:**

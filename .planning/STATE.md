@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-03-PLAN.md
-last_updated: "2026-07-05T00:29:09.716Z"
+stopped_at: Completed 04-04-PLAN.md
+last_updated: "2026-07-05T01:57:00.333Z"
 last_activity: 2026-07-05
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 18
-  completed_plans: 16
+  completed_plans: 17
   percent: 100
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-07-03)
 ## Current Position
 
 Phase: 04 (polish-performance-launch) — EXECUTING
-Plan: 4 of 5
+Plan: 5 of 5
 Status: Ready to execute
 Last activity: 2026-07-05
 
@@ -65,6 +65,7 @@ _Updated after each plan completion_
 | Phase 04 P01 | 3min | 1 tasks | 1 files |
 | Phase 04 P02 | 7min | 2 tasks | 5 files |
 | Phase 04 P03 | 12min | 3 tasks | 8 files |
+| Phase 04 P04 | 5min | 2 tasks | 0 files |
 
 ## Accumulated Context
 
@@ -90,6 +91,7 @@ Recent decisions affecting current work:
 - [Phase 04]: [Phase 04-01] Kept CSS-only flex-wrap fix for Nav.astro mobile overflow rather than a hamburger disclosure pattern -- a 5-link nav doesn't warrant a second interaction pattern, zero-JS philosophy preserved
 - [Phase 04]: [Phase 04-02] Fixed a Sharp double-encode bug in scripts/optimize-images.mjs (the plan's own script content) where the second sharp(buf).toFile() call dropped png quality/compressionLevel options, undoing most of the compression; reapplied the same options on both encode steps to achieve the expected 66%/76% size reduction
 - [Phase 04]: [Phase 04-03] Fixed og:image base-path bug: thumbnail path must be prefixed with BASE_URL before new URL(image, Astro.site) in BaseLayout, since Astro.site excludes the configured base segment
+- [Phase 04]: [Phase 04] [Phase 04-04] Confirmed Wave 1 changes (Nav fix, image compression, SEO/sitemap) already pushed and deployed successfully on GitHub Pages (Actions run 28726175820, conclusion=success); live recursive linkinator crawl found zero genuine broken links, with LinkedIn's bot-blocking 999 status correctly downgraded to a warning
 
 ### Pending Todos
 
@@ -103,6 +105,6 @@ None currently open. Plan 03-05's Task 2 (checkpoint:human-verify) was approved 
 
 ## Session Continuity
 
-Last session: 2026-07-05T00:29:09.690Z
-Stopped at: Completed 04-03-PLAN.md
+Last session: 2026-07-05T01:57:00.319Z
+Stopped at: Completed 04-04-PLAN.md
 Resume file: None
