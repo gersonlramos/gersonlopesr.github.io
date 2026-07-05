@@ -18,14 +18,14 @@ const normalizedCurrentPath = Astro.url.pathname.endsWith('/')
 ---
 
 <nav class="bg-surface border-b border-border px-4 py-6 sm:px-8">
-  <div class="mx-auto flex max-w-5xl items-center justify-between">
+  <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-y-2">
     <a
       href={homeHref}
       class="text-[20px] font-semibold leading-tight text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
     >
       Gerson Ramos
     </a>
-    <ul class="flex gap-2">
+    <ul class="flex flex-wrap justify-center gap-1 sm:gap-2">
       {navLinks.map((link) => (
         <li>
           <a
