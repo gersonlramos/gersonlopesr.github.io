@@ -14,9 +14,16 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 const baseUrl = import.meta.env.BASE_URL;
 const isPngDiagram = project.data.diagramPath?.endsWith('.png');
+const thumbnailUrl = project.data.thumbnail
+  ? `${baseUrl}/${project.data.thumbnail.replace(/^\//, '')}`
+  : undefined;
 ---
 
-<BaseLayout title={`${project.data.title} — Gerson Ramos`}>
+<BaseLayout
+  title={`${project.data.title} — Gerson Ramos`}
+  description={project.data.impactSummary}
+  image={thumbnailUrl}
+>
   <article class="mx-auto flex max-w-3xl flex-col gap-6 px-4 py-12 sm:py-16">
     <header class="flex flex-col gap-2">
       <span class="w-fit rounded border border-border px-2 py-1 font-mono text-xs text-accent">
