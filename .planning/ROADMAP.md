@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation & Deployment Pipeline** - Astro/MDX/Tailwind project scaffold deploys automatically to a working GitHub Pages URL with a persistent base layout
 - [x] **Phase 2: Core Narrative Pages** - Visitor understands who the professional is, their experience, and how to reach them (completed 2026-07-04)
 - [x] **Phase 3: Case Study Template & Project Content** - Visitor can browse and read fully-realized case studies that prove technical capability and reasoning (completed 2026-07-04)
-- [ ] **Phase 4: Polish, Performance & Launch** - Site is fast, responsive, discoverable, and fully verified before public launch
+- [x] **Phase 4: Polish, Performance & Launch** - Site is fast, responsive, discoverable, and fully verified before public launch (completed 2026-07-05)
 
 ## Phase Details
 
@@ -102,7 +102,7 @@ Plans:
 - [x] 04-02-PLAN.md — Recompress oversized project images (Sharp) + width/height/lazy-load attributes
 - [x] 04-03-PLAN.md — SEO infrastructure: meta description, Open Graph/Twitter tags, sitemap, robots.txt
 - [x] 04-04-PLAN.md — Deploy Wave 1 changes + live recursive link check (linkinator)
-- [ ] 04-05-PLAN.md — Final automated spot-checks + comprehensive human-verify checkpoint (v1 launch gate)
+- [x] 04-05-PLAN.md — Final automated spot-checks + comprehensive human-verify checkpoint (v1 launch gate)
       **UI hint**: yes
 
 ## Progress
@@ -115,4 +115,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Foundation & Deployment Pipeline      | 4/4            | Completed   | 2026-07-03 |
 | 2. Core Narrative Pages                  | 4/4 | Complete    | 2026-07-04 |
 | 3. Case Study Template & Project Content | 5/5 | Complete    | 2026-07-04 |
-| 4. Polish, Performance & Launch          | 4/5 | In Progress|  |
+| 4. Polish, Performance & Launch          | 5/5 | Complete   | 2026-07-05 |
