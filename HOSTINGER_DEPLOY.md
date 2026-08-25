@@ -11,6 +11,10 @@ Add these **repository secrets** under `Settings > Secrets and variables > Actio
 - `HOSTINGER_PASSWORD`: FTP password
 - `HOSTINGER_SERVER_DIR`: remote directory for the site, usually the `public_html` path
 
+The values are available in Hostinger under `Websites > Manage > Files > FTP accounts` (the
+server may be shown as an FTP hostname). These must be **repository secrets**, not repository
+variables. The workflow stops before deployment and names any missing secret.
+
 Add this **repository variable** under `Settings > Secrets and variables > Actions > Variables`:
 
 - `SITE_URL`: complete public URL, such as `https://example.com`
