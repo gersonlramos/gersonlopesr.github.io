@@ -1,0 +1,24 @@
+---
+title: "Planejador de Cenários para Migração de Data Lake"
+summary: "Simulador de cenários que compara cronogramas de alocação de squads em uma migração de data lake de grande escala."
+category: "data-engineering"
+impactSummary: "Permitiu à equipe de migração da Stellantis comparar cronogramas de alocação antes de assumir um plano de entrega, apoiando diretamente o trabalho de previsão já divulgado na experiência profissional."
+stack: ["Python", "Pandas", "Plotly", "GitHub Pages"]
+role: "Desenvolvedor solo"
+repoUrl: "https://github.com/gersonlramos/Analise_cenarios"
+diagramPath: "/projects/analise-cenarios/diagram.svg"
+demoUrl: "https://gersonlramos.github.io/Analise_cenarios/"
+order: 1
+---
+
+## Problema
+
+A migração do data lake da Stellantis abrangia 9 domínios, cada um acompanhado por histórias do Jira exportadas para arquivos `.txt`. Antes desta ferramenta, comparar cronogramas de alocação entre domínios exigia cruzar manualmente cada história, um processo lento, sujeito a erros e difícil de repetir quando o plano mudava.
+
+## Abordagem
+
+O pipeline começa interpretando os 9 arquivos de exportação específicos de cada domínio com Python e Pandas, formando um conjunto estruturado de histórias, estimativas e dependências. Sobre essa base, uma camada de simulação codifica as regras de alocação de squads para que diferentes estratégias sejam comparadas sem alterar os dados originais. Cada cenário vira uma linha do tempo comparativa em Gantt com Plotly, publicada como um site estático sem backend.
+
+## Impacto
+
+O simulador ofereceu à equipe de migração da Stellantis uma forma concreta de comparar cronogramas lado a lado antes de assumir um plano de entrega, substituindo o cruzamento manual em planilhas. Assim, um exercício lento de planejamento passou a ser uma comparação rápida e repetível sempre que a alocação precisasse mudar.

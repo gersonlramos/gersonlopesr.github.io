@@ -1,0 +1,23 @@
+---
+title: "Pipeline dbt em Redshift no Estilo Medallion"
+summary: "Pipeline dbt com 8 fontes no AWS Redshift, aplicando camadas no estilo medallion ao dataset Northwind."
+category: "data-engineering"
+impactSummary: "Demonstra, em um dataset público e portátil, o padrão de transformação em arquitetura medallion usado em produção na Pottencial Seguros, sem expor dados de clientes."
+stack: ["dbt", "Amazon Redshift", "SQL"]
+role: "Desenvolvedor solo"
+repoUrl: "https://github.com/gersonlramos/redshift-dbt"
+diagramPath: "/projects/redshift-dbt/diagram.svg"
+order: 2
+---
+
+## Problema
+
+Os dados brutos do Northwind chegam distribuídos em 8 tabelas de origem, com tipos inconsistentes, registros duplicados e nenhuma camada pronta para o negócio. Sem um pipeline estruturado, cada análise precisa recriar a mesma lógica de limpeza e junção.
+
+## Abordagem
+
+O pipeline é formado por modelos dbt no Amazon Redshift organizados em três camadas. Os modelos de staging deduplicam as 8 fontes e padronizam os tipos; os modelos intermediários enriquecem e juntam essas tabelas; e os marts expõem tabelas prontas para consumo analítico. Cada camada depende apenas da anterior, mantendo a linhagem rastreável.
+
+## Impacto
+
+Este é um projeto de prática autodirigida, não uma entrega divulgada para um empregador. Ele demonstra a disciplina de arquitetura medallion, de raw para staging, intermediate e marts, usada em produção na Pottencial Seguros. O objetivo é provar domínio do padrão sem expor dados ou infraestrutura reais.

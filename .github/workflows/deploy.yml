@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and deploy to Hostinger
 
 on:
   push:
@@ -7,29 +7,41 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: hostinger-deploy
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v7
-      - name: Install, build, and upload your site
-        uses: withastro/action@v6
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          BASE_PATH: ""
+        run: npm run build
+
+      - name: Deploy dist to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_SERVER }}
+          username: ${{ secrets.HOSTINGER_USERNAME }}
+          password: ${{ secrets.HOSTINGER_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./dist/
+          server-dir: ${{ secrets.HOSTINGER_SERVER_DIR }}
+          state-name: .ftp-deploy-sync-state.json

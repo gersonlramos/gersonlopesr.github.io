@@ -7,6 +7,12 @@ interface ContactLink {
   icon: typeof Mail;
 }
 
+interface Props {
+  lang?: 'en' | 'pt';
+}
+
+const { lang = 'en' } = Astro.props;
+
 const contactLinks: ContactLink[] = [
   { label: 'Email', href: 'mailto:gersonlopesr@gmail.com', icon: Mail },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/gersonlramos/', icon: Linkedin },
@@ -25,7 +31,7 @@ const contactLinks: ContactLink[] = [
             class="flex h-11 w-11 items-center justify-center rounded text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
           >
             <Icon aria-hidden="true" size={22} />
-            <span class="sr-only">{label}</span>
+            <span class="sr-only">{lang === 'pt' && label === 'Email' ? 'E-mail' : label}</span>
           </a>
         </li>
       ))}

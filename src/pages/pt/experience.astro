@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { experiencePt } from '../../data/experience-pt';
+---
+
+<BaseLayout lang="pt" title="Experiência — Gerson Ramos" description="Experiência profissional de Gerson Ramos em ciência de dados, machine learning, engenharia de dados cloud e analytics.">
+  <section class="mx-auto flex max-w-5xl flex-col gap-8 px-4 py-12 sm:py-16">
+    <header class="flex max-w-3xl flex-col gap-3">
+      <p class="font-mono text-sm text-accent">Trajetória profissional</p>
+      <h1 class="text-3xl font-semibold leading-tight text-foreground">Experiência</h1>
+      <p class="text-base leading-normal text-muted-foreground">Uma trajetória transformando dados complexos, plataformas cloud e problemas analíticos em sistemas que apoiam decisões melhores.</p>
+    </header>
+    <ol class="flex flex-col gap-6">
+      {experiencePt.map((entry) => (
+        <li class="rounded border border-border bg-surface p-6">
+          <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+            <h2 class="text-lg font-semibold leading-snug text-foreground">{entry.role} · {entry.organization}</h2>
+            <p class="font-mono text-sm text-muted-foreground">{entry.period}</p>
+          </div>
+          <p class="mt-2 text-base leading-normal text-muted-foreground">{entry.context}</p>
+          <ul class="mt-4 flex flex-col gap-2">
+            {entry.impact.map((point) => <li class="flex gap-2 text-base leading-normal text-foreground"><span class="text-accent" aria-hidden="true">▹</span><span>{point}</span></li>)}
+          </ul>
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>

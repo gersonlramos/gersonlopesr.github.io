@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectCard from '../../../components/ProjectCard.astro';
+
+const projects = (await getCollection('projectsPt')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout lang="pt" title="Projetos — Gerson Ramos" description="Estudos de caso de Ciência de Dados e Engenharia de Dados de Gerson Ramos, com pipelines de ML, arquitetura cloud e impacto de negócio.">
+  <section class="mx-auto flex max-w-5xl flex-col gap-8 px-4 py-12 sm:py-16">
+    <h1 class="text-center text-2xl font-semibold leading-tight text-foreground">Projetos</h1>
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">{projects.map((project) => <ProjectCard project={project} lang="pt" />)}</div>
+  </section>
+</BaseLayout>

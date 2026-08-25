@@ -4,14 +4,26 @@ interface NavLink {
   href: string;
 }
 
-const homeHref = import.meta.env.BASE_URL;
+interface Props {
+  lang?: 'en' | 'pt';
+}
+
+const { lang = 'en' } = Astro.props;
+const homeHref = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const languagePrefix = lang === 'pt' ? `${homeHref}pt/` : homeHref;
+const sitePath = homeHref === '/'
+  ? Astro.url.pathname.replace(/^\/+/, '')
+  : Astro.url.pathname.replace(homeHref, '').replace(/^\/+/, '');
 const navLinks: NavLink[] = [
-  { label: 'Home', href: homeHref },
-  { label: 'About', href: `${homeHref}#about` },
-  { label: 'Experience', href: `${homeHref}#experience` },
-  { label: 'Projects', href: `${homeHref}/projects/` },
-  { label: 'Contact', href: `${homeHref}#contact` },
+  { label: lang === 'pt' ? 'Início' : 'Home', href: languagePrefix },
+  { label: lang === 'pt' ? 'Experiência' : 'Experience', href: `${languagePrefix}experience/` },
+  { label: lang === 'pt' ? 'Projetos' : 'Projects', href: `${languagePrefix}projects/` },
+  { label: lang === 'pt' ? 'Contato' : 'Contact', href: `${languagePrefix}contact/` },
 ];
+const equivalentPath = lang === 'pt' ? sitePath.replace(/^pt(?:\/|$)/, '') : `pt/${sitePath}`;
+const languageHref = `${homeHref}${equivalentPath}`;
 const normalizedCurrentPath = Astro.url.pathname.endsWith('/')
   ? Astro.url.pathname
   : `${Astro.url.pathname}/`;
@@ -37,6 +49,9 @@ const normalizedCurrentPath = Astro.url.pathname.endsWith('/')
           </a>
         </li>
       ))}
+      <li>
+        <a href={languageHref} class="inline-block rounded border border-border px-4 py-2 text-sm font-semibold leading-snug text-accent hover:opacity-80">{lang === 'pt' ? 'EN' : 'PT'}</a>
+      </li>
     </ul>
   </div>
 </nav>

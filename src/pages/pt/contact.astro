@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const formAction = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://formsubmit.co/gersonlopesr@gmail.com';
+---
+
+<BaseLayout lang="pt" title="Contato — Gerson Ramos" description="Entre em contato com Gerson Ramos sobre ciência de dados, machine learning, engenharia de dados e analytics.">
+  <section class="mx-auto grid max-w-5xl gap-10 px-4 py-12 sm:py-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+    <header class="flex flex-col gap-3">
+      <p class="font-mono text-sm text-accent">Vamos conversar</p>
+      <h1 class="text-3xl font-semibold leading-tight text-foreground">Contato</h1>
+      <p class="text-base leading-normal text-muted-foreground">Tem um projeto, oportunidade ou problema de dados para discutir? Envie uma mensagem e responderei em breve.</p>
+      <a href="mailto:gersonlopesr@gmail.com" class="mt-2 text-accent hover:underline">gersonlopesr@gmail.com</a>
+    </header>
+    <form action={formAction} method="POST" class="flex flex-col gap-5 rounded border border-border bg-surface p-6">
+      <input type="hidden" name="_subject" value="Novo contato pelo portfólio" />
+      <input type="hidden" name="_captcha" value="false" />
+      <div class="flex flex-col gap-2"><label for="name" class="text-sm font-semibold text-foreground">Nome</label><input id="name" name="name" type="text" required autocomplete="name" class="rounded border border-border bg-background px-3 py-3 text-foreground outline-none focus:border-accent" /></div>
+      <div class="flex flex-col gap-2"><label for="email" class="text-sm font-semibold text-foreground">E-mail</label><input id="email" name="email" type="email" required autocomplete="email" class="rounded border border-border bg-background px-3 py-3 text-foreground outline-none focus:border-accent" /></div>
+      <div class="flex flex-col gap-2"><label for="message" class="text-sm font-semibold text-foreground">Mensagem</label><textarea id="message" name="message" required rows="6" class="resize-y rounded border border-border bg-background px-3 py-3 text-foreground outline-none focus:border-accent"></textarea></div>
+      <button type="submit" class="rounded bg-accent px-6 py-3 text-sm font-semibold text-background hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">Enviar mensagem</button>
+    </form>
+  </section>
+</BaseLayout>

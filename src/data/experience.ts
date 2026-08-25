@@ -10,7 +10,7 @@ export const experience: ExperienceEntry[] = [
   {
     role: 'Data Scientist / Cloud Data Engineer',
     organization: 'CompassUOL (Client: Stellantis)',
-    period: 'Nov 2024 — Present',
+    period: 'Dec 2025 — Present',
     context:
       'Architecting a large-scale GCP-to-AWS migration for an enterprise automotive client, spanning both delivery-tracking tooling and the underlying data pipelines.',
     impact: [
@@ -18,17 +18,6 @@ export const experience: ExperienceEntry[] = [
       'Led a multi-domain pipeline migration from BigQuery/Cloud Functions to Snowflake/Apache Airflow on AWS EKS, preserving exact financial numeric precision and resolving cross-pipeline circular dependencies.',
       'Built an interactive Streamlit/Plotly migration-tracking dashboard with a Jira-API ETL, Supabase-backed role auth, and Monte Carlo delivery forecasting, replacing manual spreadsheet reporting.',
       'Standardized security and infrastructure configuration across dozens of Airflow DAGs spanning multiple business domains.',
-    ],
-  },
-  {
-    role: 'Data Scientist',
-    organization: 'Outlier AI (via LATAM Coders)',
-    period: 'Nov 2024 — Jun 2025',
-    context:
-      'Part-time contributor to applied LLM work — from retrieval pipelines to the evaluation frameworks that measure model reasoning quality.',
-    impact: [
-      'Built RAG pipelines and LLM fine-tuning workflows, including synthetic dataset generation and benchmark evaluation scripts.',
-      'Contributed to automated testing frameworks evaluating and improving model reasoning accuracy.',
     ],
   },
   {
@@ -41,6 +30,17 @@ export const experience: ExperienceEntry[] = [
       'Implemented a high-performance Medallion Architecture (Bronze/Silver/Gold) to support advanced analytics and ML models.',
       'Refactored Airflow orchestrations with custom sensors, cutting worker blockage by 99% and increasing pipeline throughput by 35% using Apache Iceberg and Spark.',
       'Worked within an existing Kafka CDC ingestion pipeline and batch processing on Spark/EMR across 1,000+ tables, using AWS Glue to persist Iceberg tables across the Medallion layers.',
+    ],
+  },
+  {
+    role: 'Data Scientist',
+    organization: 'Outlier AI (via LATAM Coders)',
+    period: 'Nov 2024 — Jun 2025',
+    context:
+      'Part-time contributor to applied LLM work — from retrieval pipelines to the evaluation frameworks that measure model reasoning quality.',
+    impact: [
+      'Built RAG pipelines and LLM fine-tuning workflows, including synthetic dataset generation and benchmark evaluation scripts.',
+      'Contributed to automated testing frameworks evaluating and improving model reasoning accuracy.',
     ],
   },
   {

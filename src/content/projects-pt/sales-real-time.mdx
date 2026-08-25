@@ -1,0 +1,23 @@
+---
+title: "Dashboard de Monitoramento de Vendas de Produtos Pet em Tempo Real"
+summary: "Dashboard Power BI conectado a um banco PostgreSQL simulado, acompanhando KPIs, meios de pagamento e desempenho por vendedor."
+category: "data-science"
+impactSummary: "Reconstrói o padrão de dashboards executivos de KPIs criado para a Pet Premium Distribuidora, demonstrando publicamente o fluxo de monitoramento de vendas sem expor dados reais."
+stack: ["PostgreSQL", "Power BI", "SQL"]
+role: "Desenvolvedor solo"
+repoUrl: "https://github.com/gersonlramos/Sales_Real_Time"
+thumbnail: "/projects/sales-real-time/thumbnail.png"
+order: 4
+---
+
+## Problema
+
+Sem uma visão consolidada, acompanhar KPIs de vendas, distribuição por meio de pagamento e desempenho de cada vendedor exige planilhas manuais alimentadas por várias exportações transacionais. Esse modelo não escala e dificulta a identificação rápida de tendências.
+
+## Abordagem
+
+Um banco PostgreSQL transacional simulado modela o schema de vendas, incluindo pedidos, vendedores e meios de pagamento, e alimenta um relatório Power BI. O relatório apresenta cartões de KPI, um gráfico de distribuição de pagamentos e uma tabela de ranking por vendedor.
+
+## Impacto
+
+O projeto reconstrói, de ponta a ponta e com dados simulados não confidenciais, o mesmo padrão de dashboard executivo entregue em produção na Pet Premium Distribuidora. O objetivo não é alegar uma cifra de receita, mas demonstrar o pipeline completo, do schema à entrega do relatório.

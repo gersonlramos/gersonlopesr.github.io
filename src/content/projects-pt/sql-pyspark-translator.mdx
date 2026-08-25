@@ -1,0 +1,23 @@
+---
+title: "Tradutor de Consultas SQL para PySpark"
+summary: "Parser e tradutor que converte consultas SQL, incluindo joins, aliases, agregações e GROUP BY, em código equivalente de DataFrame PySpark."
+category: "data-engineering"
+impactSummary: "Demonstra domínio prático da camada de tradução SQL-Spark usada no trabalho de refatoração com Airflow, Apache Iceberg e Spark, apresentada aqui como uma ferramenta independente e inspecionável."
+stack: ["Python", "PySpark", "SQL"]
+role: "Desenvolvedor solo"
+repoUrl: "https://github.com/gersonlramos/SQL_PySpark_Translator"
+diagramPath: "/projects/sql-pyspark-translator/diagram.svg"
+order: 3
+---
+
+## Problema
+
+Equipes que migram workloads de warehouses SQL para Spark frequentemente precisam traduzir consultas existentes para código PySpark. Além de um `SELECT` simples, essa tradução manual precisa lidar corretamente com joins, aliases, agregações e cláusulas `GROUP BY`, o que é lento e sujeito a erros difíceis de perceber.
+
+## Abordagem
+
+Um lexer/parser customizado tokeniza a consulta SQL recebida, constrói uma representação intermediária, uma AST que captura a estrutura da consulta independentemente da sintaxe original, e gera código equivalente de DataFrame PySpark. O tradutor trata joins, aliases de colunas, funções de agregação e cláusulas `GROUP BY`.
+
+## Impacto
+
+Este é um projeto de prática autodirigida, não uma entrega divulgada para um empregador. Ele demonstra domínio da lógica de tradução SQL-Spark relacionada ao trabalho de refatoração de orquestrações Airflow com Apache Iceberg e Spark, como um artefato público e inspecionável, sem alegar substituição de um sistema de produção.

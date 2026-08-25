@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   image?: string;
   type?: 'website' | 'article';
+  lang?: 'en' | 'pt';
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description = 'Portfolio of Gerson Ramos, a hybrid Data Scientist and Data Engineer — real-world case studies in ML, analytics, and data pipeline engineering.',
   image,
   type = 'website',
+  lang = 'en',
 } = Astro.props;
 
 const faviconHref = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`;
@@ -22,7 +24,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang === 'pt' ? 'pt-BR' : 'en'}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,11 +43,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
   </head>
-  <body class="bg-background text-foreground">
-    <Nav />
-    <main>
+  <body class="flex min-h-screen flex-col bg-background text-foreground">
+    <Nav lang={lang} />
+    <main class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>
