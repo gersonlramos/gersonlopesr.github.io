@@ -7,8 +7,11 @@ interface Props {
 }
 
 const { project, lang = 'en' } = Astro.props;
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 const languagePrefix = lang === 'pt' ? `${baseUrl}pt/` : baseUrl;
+const coverPath = project.data.imagePaths[0] ?? project.data.thumbnail;
 const categoryLabel = lang === 'pt'
   ? (project.data.category === 'data-engineering' ? 'Engenharia de Dados' : 'Ciência de Dados')
   : (project.data.category === 'data-engineering' ? 'Data Engineering' : 'Data Science');
@@ -18,10 +21,10 @@ const categoryLabel = lang === 'pt'
   href={`${languagePrefix}projects/${project.id}/`}
   class="flex flex-col gap-3 rounded border border-border bg-surface p-6 hover:border-accent"
 >
-  {project.data.thumbnail && (
+  {coverPath && (
     <img
-      src={`${baseUrl}/${project.data.thumbnail.replace(/^\//, '')}`}
-      alt={`${project.data.title} thumbnail`}
+      src={`${baseUrl}${coverPath.replace(/^\//, '')}`}
+      alt={`${project.data.title} preview`}
       width="950"
       height="541"
       loading="lazy"

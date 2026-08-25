@@ -1,43 +1,58 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
+const projects = await getCollection('projects');
+const featuredSlugs = ['sales-real-time', 'analise-cenarios', 'sql-pyspark-translator'];
+const featuredProjects = featuredSlugs
+  .map((slug) => projects.find((project) => project.id === slug))
+  .filter((project) => project !== undefined);
 ---
 
-<BaseLayout description="Gerson Ramos is a hybrid Data Scientist and Data Engineer with 5+ years of experience building ML, analytics, and data pipeline solutions on AWS. Explore real project case studies, experience, and how to get in touch.">
-  <section
-    class="mx-auto flex max-w-5xl flex-col items-center gap-4 px-4 py-12 text-center sm:py-16"
-  >
-    <h1 class="text-[32px] font-semibold leading-tight text-foreground">
-      Gerson Ramos — Data Scientist &amp; Data Engineer
-    </h1>
-    <p class="max-w-2xl text-base leading-normal text-muted-foreground">
-      I'm a Data Scientist and ML Developer with 5+ years of experience bridging advanced
-      analytics, software engineering, and financial strategy — expert in Python and Advanced
-      SQL, building Classic ML, Deep Learning, and Generative AI solutions on AWS (SageMaker,
-      Bedrock, Glue), and currently architecting a large-scale GCP-to-AWS cloud migration for
-      an enterprise environment. My focus is the reasoning behind each decision — why a
-      particular approach, trade-off, or architecture was chosen — and the measurable business
-      impact it delivered.
-    </p>
-    <div class="flex flex-col items-center gap-2 sm:flex-row sm:gap-4">
-      <a
-        href={`${baseUrl}resume.pdf`}
-        download
-        class="inline-flex items-center justify-center rounded bg-accent px-6 py-3 text-sm font-semibold leading-snug text-background hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
-      >
-        Download Resume (PDF)
-      </a>
-      <a
-        href={`${baseUrl}resume-pt.pdf`}
-        download
-        class="inline-flex items-center justify-center rounded border border-border px-6 py-3 text-sm font-semibold leading-snug text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
-      >
-        Baixar Currículo pt-br (PDF)
-      </a>
+<BaseLayout description="Gerson Ramos is a Data Scientist and Cloud Data Engineer building data platforms, ML systems, and decision tools at enterprise scale.">
+  <section class="mx-auto grid max-w-5xl gap-10 px-4 py-16 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+    <div class="flex flex-col gap-5">
+      <p class="font-mono text-sm text-accent">Data Scientist · Cloud Data Engineer</p>
+      <h1 class="max-w-3xl text-4xl font-semibold leading-tight text-foreground sm:text-5xl">Building cloud data platforms and ML systems at enterprise scale.</h1>
+      <p class="max-w-2xl text-lg leading-relaxed text-muted-foreground">I turn complex data problems into reliable pipelines, useful models, and tools that make better decisions easier to execute.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href={`${baseUrl}projects/`} class="inline-flex items-center justify-center rounded bg-accent px-5 py-3 text-sm font-semibold text-background hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">Explore projects</a>
+        <a href={`${baseUrl}experience/`} class="inline-flex items-center justify-center rounded border border-border px-5 py-3 text-sm font-semibold text-foreground hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">View experience</a>
+      </div>
+      <div class="flex flex-wrap gap-4 text-sm font-semibold">
+        <a href={`${baseUrl}resume.pdf`} download class="text-accent hover:underline">Download resume (EN) &darr;</a>
+        <a href={`${baseUrl}resume-pt.pdf`} download class="text-muted-foreground hover:text-accent hover:underline">Baixar currículo (PT) &darr;</a>
+      </div>
+    </div>
+    <div class="border-l-2 border-accent pl-5 lg:mb-1">
+      <p class="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Current focus</p>
+      <p class="mt-3 text-base leading-relaxed text-foreground">Architecting a large-scale GCP-to-AWS migration while building the data products that keep delivery visible and predictable.</p>
     </div>
   </section>
 
+  <section class="border-y border-border bg-surface/60">
+    <div class="mx-auto grid max-w-5xl grid-cols-2 gap-px bg-border sm:grid-cols-4">
+      <div class="bg-background px-4 py-6"><p class="font-mono text-3xl font-semibold text-accent">9</p><p class="mt-1 text-sm text-muted-foreground">business domains mapped</p></div>
+      <div class="bg-background px-4 py-6"><p class="font-mono text-3xl font-semibold text-accent">3,000+</p><p class="mt-1 text-sm text-muted-foreground">objects in migration scope</p></div>
+      <div class="bg-background px-4 py-6"><p class="font-mono text-3xl font-semibold text-accent">99%</p><p class="mt-1 text-sm text-muted-foreground">less worker blockage</p></div>
+      <div class="bg-background px-4 py-6"><p class="font-mono text-3xl font-semibold text-accent">1,000+</p><p class="mt-1 text-sm text-muted-foreground">tables processed</p></div>
+    </div>
+  </section>
+
+  <section class="mx-auto flex max-w-5xl flex-col gap-7 px-4 py-16 sm:py-20">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div><p class="font-mono text-sm text-accent">Selected work</p><h2 class="mt-2 text-2xl font-semibold leading-tight text-foreground">Projects with a point of view</h2></div>
+      <a href={`${baseUrl}projects/`} class="text-sm font-semibold text-accent hover:underline">See all projects &rarr;</a>
+    </div>
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">{featuredProjects.map((project) => <ProjectCard project={project} />)}</div>
+  </section>
+
+  <section class="mx-auto flex max-w-5xl flex-col gap-5 px-4 pb-16 sm:pb-20">
+    <p class="font-mono text-sm text-accent">Tools I work with</p>
+    <div class="flex flex-wrap gap-2 text-sm text-muted-foreground">{['Python', 'SQL', 'AWS', 'Snowflake', 'Apache Airflow', 'Spark', 'Machine Learning', 'Generative AI', 'Power BI'].map((tool) => <span class="rounded border border-border px-3 py-2">{tool}</span>)}</div>
+  </section>
 </BaseLayout>

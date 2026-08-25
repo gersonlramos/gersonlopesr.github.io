@@ -13,6 +13,7 @@ const projectSchema = z
     repoUrl: z.string().url(),
     notebookUrl: z.string().url().optional(),
     thumbnail: z.string().optional(),
+    imagePaths: z.array(z.string()).default([]),
     diagramPath: z.string().optional(),
     demoUrl: z.string().url().optional(),
     order: z.number().default(0),

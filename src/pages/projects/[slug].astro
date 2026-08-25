@@ -17,6 +17,7 @@ const isPngDiagram = project.data.diagramPath?.endsWith('.png');
 const thumbnailUrl = project.data.thumbnail
   ? `${baseUrl}/${project.data.thumbnail.replace(/^\//, '')}`
   : undefined;
+const imagePaths = project.data.imagePaths;
 ---
 
 <BaseLayout
@@ -48,6 +49,23 @@ const thumbnailUrl = project.data.thumbnail
         decoding="async"
         class="rounded border border-border"
       />
+    )}
+
+    {imagePaths.length > 0 && (
+      <section class="flex flex-col gap-4" aria-labelledby="project-images-title">
+        <h2 id="project-images-title" class="text-xl font-semibold text-foreground">Project images</h2>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {imagePaths.map((imagePath) => (
+            <img
+              src={`${baseUrl}/${imagePath.replace(/^\//, '')}`}
+              alt={`${project.data.title} project screenshot`}
+              loading="lazy"
+              decoding="async"
+              class="w-full rounded border border-border"
+            />
+          ))}
+        </div>
+      </section>
     )}
 
     <div class="prose prose-invert max-w-none text-foreground">
