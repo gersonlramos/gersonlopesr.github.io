@@ -1,0 +1,24 @@
+---
+title: "RAG Local sobre Demonstrações Financeiras"
+summary: "QA aumentada por recuperação (RAG) local sobre demonstrações financeiras densas em PDF, rodando inteiramente na CPU de um notebook comum e devolvendo respostas fundamentadas e citadas, com 100% de abstenção quando o dado não existe."
+category: "data-science"
+impactSummary: "Um projeto autodirigido que estende o trabalho de pipelines de RAG e avaliação por benchmark divulgado para a Outlier AI e a CompassUOL AI Studio: um sistema de RAG totalmente avaliado, com garantia explícita de abstenção e custo de infraestrutura praticamente zero."
+stack: ["Python", "LlamaIndex", "ChromaDB", "Ollama", "Streamlit"]
+role: "Desenvolvedor solo"
+repoUrl: "https://github.com/gersonlramos/finance-notes-rag"
+diagramPath: "/projects/finance-notes-rag/diagram.svg"
+imagePaths: ["/projects/finance-notes-rag/interface.png"]
+order: 7
+---
+
+## Problema
+
+Demonstrações financeiras densas em PDF — aqui, as contas publicadas do Clube de Regatas do Flamengo de 2022 a 2025 — são difíceis de consultar: os números vivem em tabelas de muitas linhas, espalhados por várias páginas, em português. O objetivo era obter respostas em linguagem natural fundamentadas e citadas, que nunca inventem um valor ausente da fonte, rodando totalmente offline na CPU de um notebook comum (um i5-8265U), sem chaves de API e com custo de nuvem praticamente zero, com um fallback opcional para a API da Claude apenas quando explicitamente habilitado.
+
+## Abordagem
+
+O sistema é um pipeline de 7 estágios (ver o diagrama acima): extração com PyMuPDF4LLM mais OCR Tesseract em português, limpeza com cerca de 7 transformações baseadas em regras, chunking fixo de 512 tokens com 64 tokens de sobreposição, embeddings multilíngues MiniLM (ONNX, cerca de 0,3s por chunk na CPU), um índice de cosseno no ChromaDB, recuperação léxica BM25 com filtro de metadado por ano e geração com Ollama Llama 3.2 3B produzindo citações inline. É construído sobre o LlamaIndex, com uma interface de chatbot em Streamlit que destaca as fontes (captura abaixo). Duas descobertas moldaram o desenho: a recuperação léxica BM25 superou os pequenos embeddings multilíngues em cerca de 24 pontos para terminologia contábil, e o chunking de tamanho fixo superou o chunking por seção em cerca de 6 pontos. O filtro por ano na consulta impede que uma pergunta sobre 2023 traga linhas de 2025.
+
+## Impacto
+
+Autodirigido, enquadrado como os demais projetos de prática — sem alegações de métricas de negócio. A avaliação roda por um script determinístico de 20 perguntas: o hit@k de recuperação é de 82%, o MRR 0,75, 65% das respostas estão totalmente corretas e a abstenção correta é de 100% — o sistema nunca alucinou um valor ausente. Isso se conecta aos pipelines de RAG e scripts de avaliação por benchmark divulgados para a Outlier AI e ao trabalho de IA generativa na AWS na CompassUOL AI Studio. Os limites merecem ser ditos com clareza: o modelo de 3B lida com tabelas grandes de muitas linhas com apenas cerca de 65% de acurácia (um modelo Qwen 2.5 7B chega a 71%, mas a ~2,5 minutos por resposta), termos genéricos como "ativo total" recuperam mal, o alinhamento de colunas do OCR é aproximado e a inferência só em CPU é o teto rígido. O valor demonstrável é um sistema de RAG totalmente avaliado com garantia explícita de abstenção, além do resultado empírico de que a recuperação léxica supera pequenos embeddings para texto financeiro e tabular — a custo de infraestrutura zero.

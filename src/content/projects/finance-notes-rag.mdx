@@ -1,0 +1,24 @@
+---
+title: "Local-First RAG over Financial Statements"
+summary: "Local-first retrieval-augmented QA over dense PDF financial statements, running entirely on a consumer laptop CPU and returning grounded, cited answers with a 100% abstention rate on missing data."
+category: "data-science"
+impactSummary: "A self-directed project extending the RAG-pipeline and benchmark-evaluation work disclosed for Outlier AI and CompassUOL AI Studio: a fully evaluated RAG system with an explicit abstention guarantee at effectively zero infrastructure cost."
+stack: ["Python", "LlamaIndex", "ChromaDB", "Ollama", "Streamlit"]
+role: "Sole developer"
+repoUrl: "https://github.com/gersonlramos/finance-notes-rag"
+diagramPath: "/projects/finance-notes-rag/diagram.svg"
+imagePaths: ["/projects/finance-notes-rag/interface.png"]
+order: 7
+---
+
+## Problem
+
+Dense PDF financial statements — here, Clube de Regatas do Flamengo's published accounts for 2022-2025 — are hard to query: the numbers live in multi-row tables, across many pages, in Portuguese. The goal was grounded, cited natural-language answers that never invent a figure that isn't in the source, running entirely offline on a consumer laptop CPU (an i5-8265U) with no API keys and effectively zero cloud cost, with an optional Claude API fallback only when explicitly enabled.
+
+## Approach
+
+The system is a 7-stage pipeline (see the diagram above): extraction with PyMuPDF4LLM plus Tesseract OCR for Portuguese, cleaning via roughly 7 rule-based transforms, fixed 512-token chunking with 64-token overlap, multilingual MiniLM embeddings (ONNX, about 0.3s per chunk on CPU), a ChromaDB cosine index, BM25 lexical retrieval with a year-metadata filter, and generation with Ollama Llama 3.2 3B emitting inline citations. It is built on LlamaIndex with a Streamlit chatbot UI that highlights sources (screenshot below). Two findings shaped the design: BM25 lexical retrieval beat the small multilingual embeddings by about 24 points for accounting terminology, and fixed-size chunking beat section-based chunking by about 6 points. Year-aware query filtering keeps a question about 2023 from pulling 2025 rows.
+
+## Impact
+
+Self-directed, framed like the other practice projects — no business metric claims. Evaluation runs through a deterministic 20-question script: retrieval hit@k is 82%, MRR 0.75, 65% of answers are fully correct, and correct abstention is 100% — the system never hallucinated a missing figure. That ties to the RAG pipelines and benchmark evaluation scripts disclosed for Outlier AI and the generative-AI-on-AWS work at CompassUOL AI Studio. The limits are worth stating plainly: the 3B model handles large multi-row tables at only about 65% accuracy (a Qwen 2.5 7B model reaches 71%, but at ~2.5 minutes per response), generic terms like "total assets" retrieve poorly, OCR column alignment is approximate, and CPU-only inference is the hard ceiling. The demonstrable value is a fully evaluated RAG system with an explicit abstention guarantee, plus the empirical result that lexical retrieval beats small embeddings for financial and tabular text — at zero infrastructure cost.

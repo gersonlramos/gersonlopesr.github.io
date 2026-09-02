@@ -1,0 +1,24 @@
+---
+title: "Store Sales Time-Series Forecasting"
+summary: "Kaggle competition entry forecasting 16 days of daily unit sales across 1,782 store x product-family series for an Ecuadorian retailer, using a hybrid direct/recursive LightGBM ensemble."
+category: "data-science"
+impactSummary: "A public Kaggle / self-directed forecasting project that mirrors the sales-forecasting regression work disclosed for Pet Premium Distribuidora, demonstrating disciplined backtesting on a hard real-world panel rather than any business-dollar outcome."
+stack: ["Python", "LightGBM", "Pandas", "Time Series"]
+role: "Sole developer"
+repoUrl: "https://github.com/gersonlramos/Store-Sales---Time-Series-Forecasting"
+notebookUrl: "https://github.com/gersonlramos/Store-Sales---Time-Series-Forecasting/blob/main/final_model/kaggle_baby_care_dormant_submission.ipynb"
+diagramPath: "/projects/store-sales-forecasting/diagram.svg"
+order: 6
+---
+
+## Problem
+
+Kaggle's "Store Sales — Time Series Forecasting" asks for 16 days of daily unit-sales predictions across 1,782 store x product-family series for Corporacion Favorita, an Ecuadorian grocery retailer, with roughly 4.6 years of history to learn from. Submissions are scored on RMSLE, so both over- and under-prediction are penalised on a log scale, and the panel is messy: series churn in and out, promotions distort demand, and many product families sell nothing for long stretches. A naive same-weekday-mean baseline scores 0.52063 RMSLE — the bar any real model has to clear.
+
+## Approach
+
+The final model is a hybrid ensemble (see the pipeline above). A global **direct** LightGBM predicts each horizon independently — trained across 5 seeds with lag features bucketed per horizon (1, 2, 3-4, and 5-16 days out) — and carries about 70% of the blend weight. It is combined with a per-family **recursive** LightGBM that feeds its own predictions back in and is stronger at the long end of the horizon, carrying the remaining ~30%. Blend weights were learned and then validated leave-one-out across independent, contiguous 16-day holdout windows — never random splits, which would leak future information into the past. A post-processing step hard-zeros any series dormant for 365+ days. The features that actually moved the needle were recent-level lags and rolling means (about 95% of the gain over naive), promo intensity measured relative to each series' own norm, and day-of-week seasonality.
+
+## Impact
+
+This is a public-competition / self-directed project, framed the same way as `redshift-dbt.mdx` and `sql-pyspark-translator.mdx`: no fabricated business metric, just a verifiable result and the reasoning behind it. The ensemble scored 0.38924 RMSLE on the leaderboard (0.38469 on the local holdout) against the 0.52063 naive baseline — roughly 26% better than naive. It ties directly to the Scikit-Learn sales-forecasting and regression work influencing inventory planning already disclosed for Pet Premium Distribuidora in the Experience section. The lesson worth keeping: the biggest gains came from architecture changes — per-horizon models, dead-series zeroing, and adding the recursive blend partner — not from new features. Several plausible "real effects" also turned out to be traps: an oil-price correlation of r = -0.63 collapsed to -0.02 after detrending, and an apparent promo signal was look-ahead leakage that vanished at the panel edge. XGBoost, tried as an alternative, was indistinguishable from LightGBM seed noise.

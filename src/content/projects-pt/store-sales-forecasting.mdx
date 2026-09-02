@@ -1,0 +1,24 @@
+---
+title: "Previsão de Vendas com Séries Temporais"
+summary: "Participação na competição do Kaggle prevendo 16 dias de vendas diárias em unidades para 1.782 séries de loja x família de produto de um varejista equatoriano, com um ensemble híbrido direto/recursivo de LightGBM."
+category: "data-science"
+impactSummary: "Um projeto de competição pública no Kaggle / autodirigido que espelha o trabalho de previsão de vendas com modelos de regressão divulgado para a Pet Premium Distribuidora, demonstrando backtesting disciplinado em um painel real difícil, sem qualquer alegação de resultado financeiro."
+stack: ["Python", "LightGBM", "Pandas", "Time Series"]
+role: "Desenvolvedor solo"
+repoUrl: "https://github.com/gersonlramos/Store-Sales---Time-Series-Forecasting"
+notebookUrl: "https://github.com/gersonlramos/Store-Sales---Time-Series-Forecasting/blob/main/final_model/kaggle_baby_care_dormant_submission.ipynb"
+diagramPath: "/projects/store-sales-forecasting/diagram.svg"
+order: 6
+---
+
+## Problema
+
+A competição "Store Sales — Time Series Forecasting" do Kaggle pede 16 dias de previsão de vendas diárias em unidades para 1.782 séries de loja x família de produto da Corporacion Favorita, um varejista de mercearia do Equador, com cerca de 4,6 anos de histórico. As submissões são avaliadas por RMSLE, então tanto superestimar quanto subestimar são penalizados em escala logarítmica. O painel é ruidoso: séries entram e saem, promoções distorcem a demanda e muitas famílias de produto ficam sem vender por longos períodos. Um baseline ingênuo (média do mesmo dia da semana) marca 0,52063 de RMSLE — o patamar que qualquer modelo real precisa superar.
+
+## Abordagem
+
+O modelo final é um ensemble híbrido (ver o pipeline acima). Um LightGBM **direto** global prevê cada horizonte de forma independente — treinado com 5 sementes e features de lag agrupadas por horizonte (1, 2, 3-4 e 5-16 dias à frente) — e responde por cerca de 70% do peso do blend. Ele é combinado com um LightGBM **recursivo** por família, que realimenta as próprias previsões e é mais forte na ponta longa do horizonte, com os ~30% restantes. Os pesos do blend foram aprendidos e validados leave-one-out em janelas de holdout contíguas e independentes de 16 dias — nunca divisões aleatórias, que vazariam informação do futuro para o passado. Uma etapa de pós-processamento zera de forma rígida qualquer série dormente há 365+ dias. As features que realmente fizeram diferença foram lags de nível recente e médias móveis (cerca de 95% do ganho sobre o ingênuo), intensidade de promoção medida em relação à norma de cada série e sazonalidade por dia da semana.
+
+## Impacto
+
+Este é um projeto de competição pública / autodirigido, enquadrado da mesma forma que `redshift-dbt.mdx` e `sql-pyspark-translator.mdx`: nenhuma métrica de negócio inventada, apenas um resultado verificável e o raciocínio por trás dele. O ensemble marcou 0,38924 de RMSLE no leaderboard (0,38469 no holdout local) contra o baseline ingênuo de 0,52063 — cerca de 26% melhor que o ingênuo. Conecta-se diretamente ao trabalho de previsão de vendas e regressão com Scikit-Learn que influenciava o planejamento de estoque, já divulgado para a Pet Premium Distribuidora na seção de Experiência. A lição que fica: os maiores ganhos vieram de mudanças de arquitetura — modelos por horizonte, zeragem de séries mortas e a adição do parceiro recursivo no blend — e não de novas features. Vários "efeitos reais" plausíveis também se mostraram armadilhas: uma correlação de r = -0,63 com o preço do petróleo desabou para -0,02 após remover a tendência, e um aparente sinal de promoção era vazamento de look-ahead que sumiu na borda do painel. O XGBoost, testado como alternativa, foi indistinguível do ruído de sementes do LightGBM.
