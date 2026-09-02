@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: Completed 04-05-PLAN.md - v1 milestone complete
-last_updated: "2026-07-05T02:20:59.688Z"
-last_activity: 2026-07-05
+stopped_at: Completed quick task 260902-j1x - two new case studies added
+last_updated: "2026-09-02T16:43:06.974Z"
+last_activity: 2026-09-02
 progress:
   total_phases: 4
   completed_phases: 4
@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-07-03)
 Phase: 4
 Plan: Not started
 Status: Phase complete — v1 milestone complete, ready for phase/milestone verification
-Last activity: 2026-07-05
+Last activity: 2026-09-02 - Completed quick task 260902-j1x: added store-sales-forecasting + finance-notes-rag case studies
 
 Progress: [██████████] 100%
 
@@ -105,8 +105,14 @@ None currently open. Plan 04-05's Task 2 (checkpoint:human-verify) was approved 
 - Stack choice (Astro vs. Jekyll) is a Claude assumption, not user-confirmed — cheap to revisit at Phase 1 start if user prefers lower build complexity.
 - Environment note: local build/install is stable in non-synced path (`C:/Users/gerso/dev/projeto_portifolio_local`); Google Drive workspace caused node_modules lock/corruption issues on Windows.
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260902-j1x | Add store-sales-forecasting and finance-notes-rag case studies (EN + PT) with SVG diagrams; feature both on the homepage | 2026-09-02 | 95c9d77..d7011e5 | [260902-j1x-adicionar-case-studies-store-sales-forec](./quick/260902-j1x-adicionar-case-studies-store-sales-forec/) |
+
 ## Session Continuity
 
-Last session: 2026-07-05T02:17:27.232Z
-Stopped at: Completed 04-05-PLAN.md - v1 milestone complete
+Last session: 2026-09-02T16:43:06.974Z
+Stopped at: Completed quick task 260902-j1x - two new case studies added, build green
 Resume file: None
