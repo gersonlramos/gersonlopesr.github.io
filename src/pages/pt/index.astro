@@ -7,7 +7,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const projects = await getCollection('projectsPt');
-const featuredSlugs = ['sales-real-time', 'analise-cenarios', 'sql-pyspark-translator'];
+const featuredSlugs = ['store-sales-forecasting', 'analise-cenarios', 'finance-notes-rag'];
 const featuredProjects = featuredSlugs
   .map((slug) => projects.find((project) => project.id === slug))
   .filter((project) => project !== undefined);
