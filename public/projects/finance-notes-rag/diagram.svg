@@ -1,78 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 360" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 360" role="img" aria-labelledby="title desc">
   <title id="title">Local-first RAG pipeline over financial statements</title>
   <desc id="desc">An offline indexing lane turns PDF statements into a ChromaDB index; an online query lane retrieves with BM25 and a year filter, then generates a cited answer with a local LLM.</desc>
-  <rect x="0" y="0" width="1040" height="360" fill="#0a0e14" />
+  <rect x="0" y="0" width="1160" height="360" fill="#0a0e14" />
 
-  <!-- Offline indexing lane (top row) -->
-  <!-- Box 1: PDF Statements -->
-  <rect x="20" y="40" width="145" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
-  <text x="92" y="77" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">PDF Statements</text>
-  <text x="92" y="101" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">Flamengo, 2022-2025</text>
+  <text x="20" y="28" fill="#64748b" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">INDEXING &#183; OFFLINE</text>
+  <text x="20" y="218" fill="#64748b" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">QUERY &#183; ONLINE</text>
 
-  <line x1="165" y1="85" x2="192" y2="85" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+  <!-- Indexing lane (top) -->
+  <rect x="20" y="40" width="165" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="102" y="80" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="600">PDF Statements</text>
+  <text x="102" y="103" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">Flamengo, 2022&#8211;2025</text>
 
-  <!-- Box 2: Extraction -->
-  <rect x="192" y="40" width="145" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
-  <text x="264" y="77" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Extraction</text>
-  <text x="264" y="101" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">PyMuPDF4LLM + OCR (pt)</text>
+  <line x1="185" y1="85" x2="206" y2="85" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
 
-  <line x1="337" y1="85" x2="364" y2="85" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+  <rect x="210" y="40" width="165" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="292" y="80" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="600">Extraction</text>
+  <text x="292" y="103" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">PyMuPDF4LLM + OCR</text>
 
-  <!-- Box 3: Cleaning -->
-  <rect x="364" y="40" width="145" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
-  <text x="436" y="77" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Cleaning</text>
-  <text x="436" y="101" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">~7 rule-based transforms</text>
+  <line x1="375" y1="85" x2="396" y2="85" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
 
-  <line x1="509" y1="85" x2="536" y2="85" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+  <rect x="400" y="40" width="165" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="482" y="80" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="600">Cleaning</text>
+  <text x="482" y="103" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">rule-based transforms</text>
 
-  <!-- Box 4: Chunking -->
-  <rect x="536" y="40" width="145" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
-  <text x="608" y="77" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Chunking</text>
-  <text x="608" y="101" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">512-token, 64 overlap</text>
+  <line x1="565" y1="85" x2="586" y2="85" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
 
-  <line x1="681" y1="85" x2="708" y2="85" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+  <rect x="590" y="40" width="165" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="672" y="80" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="600">Chunking</text>
+  <text x="672" y="103" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">512 tok, 64 overlap</text>
 
-  <!-- Box 5: Embedding -->
-  <rect x="708" y="40" width="145" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
-  <text x="780" y="77" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Embedding</text>
-  <text x="780" y="101" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">MiniLM multilingual, ONNX</text>
+  <line x1="755" y1="85" x2="776" y2="85" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
 
-  <line x1="853" y1="85" x2="880" y2="85" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+  <rect x="780" y="40" width="165" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="862" y="80" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="600">Embedding</text>
+  <text x="862" y="103" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">MiniLM multilingual</text>
 
-  <!-- Box 6: Index -->
-  <rect x="880" y="40" width="145" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
-  <text x="952" y="77" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Index</text>
-  <text x="952" y="101" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">ChromaDB (cosine)</text>
+  <line x1="945" y1="85" x2="966" y2="85" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
 
-  <!-- Online query lane (bottom row) -->
-  <!-- Box 7: User Question -->
-  <rect x="20" y="230" width="145" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
-  <text x="92" y="267" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">User Question</text>
-  <text x="92" y="291" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">natural language</text>
+  <rect x="970" y="40" width="165" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="1052" y="80" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="600">Index</text>
+  <text x="1052" y="103" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">ChromaDB (cosine)</text>
 
-  <line x1="165" y1="275" x2="364" y2="275" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+  <!-- Query lane (bottom) -->
+  <rect x="20" y="230" width="165" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="102" y="270" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="600">User Question</text>
+  <text x="102" y="293" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">natural language</text>
 
-  <!-- Box 8: Retrieval -->
-  <rect x="364" y="230" width="145" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
-  <text x="436" y="267" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Retrieval</text>
-  <text x="436" y="291" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">BM25 lexical + year filter</text>
+  <line x1="185" y1="275" x2="396" y2="275" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <rect x="400" y="230" width="165" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="482" y="270" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="600">Retrieval</text>
+  <text x="482" y="293" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">BM25 + year filter</text>
 
   <!-- Index converges into Retrieval -->
-  <line x1="905" y1="130" x2="500" y2="230" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="1010" y1="130" x2="524" y2="232" stroke="#22d3ee" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrowhead)" />
 
-  <line x1="509" y1="275" x2="536" y2="275" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="565" y1="275" x2="586" y2="275" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
 
-  <!-- Box 9: Generation -->
-  <rect x="536" y="230" width="145" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
-  <text x="608" y="267" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Generation</text>
-  <text x="608" y="291" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">Llama 3.2 3B, cited</text>
+  <rect x="590" y="230" width="165" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="672" y="270" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="600">Generation</text>
+  <text x="672" y="293" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">Llama 3.2 3B, cited</text>
 
-  <line x1="681" y1="275" x2="708" y2="275" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="755" y1="275" x2="776" y2="275" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
 
-  <!-- Box 10: Cited Answer -->
-  <rect x="708" y="230" width="180" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
-  <text x="798" y="267" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Cited Answer</text>
-  <text x="798" y="291" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">grounded or abstains</text>
+  <rect x="780" y="230" width="200" height="90" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1.5" />
+  <text x="880" y="270" text-anchor="middle" fill="#e2e8f0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="600">Cited Answer</text>
+  <text x="880" y="293" text-anchor="middle" fill="#94a3b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">grounded or abstains</text>
 
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
