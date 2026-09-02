@@ -112,6 +112,16 @@ Each task was committed atomically:
 
 None. Both case studies render full prose, a diagram, and (for finance-notes-rag) the interface screenshot from real committed assets.
 
+## Post-execution polish (orchestrator)
+
+Three follow-up commits after the worktree merged to `main`:
+
+- `d7011e5` — removed internal `.mdx` filenames that leaked into the visitor-facing Impact copy of `store-sales-forecasting` (EN + PT); tracked `260902-j1x-PLAN.md` (it had lived only in the shared checkout).
+- `86945bd` — redrew both SVG diagrams. The executor's first pass had sublabels 2–3× wider than their boxes (verified by rendering to PNG). Rewrote with short sublabels matching `redshift-dbt/diagram.svg`, wider boxes, corrected viewBox (`1200×340` forecasting, `1160×360` RAG), plus offline/online lane headers and a dashed convergence arrow on the RAG diagram.
+- `cd8825f` — recorded the quick task in `STATE.md`.
+
+Reverted a spurious `.planning` entry that appeared in `.gitignore` during the run (the repo tracks `.planning/`). Removed the completed worktree + branch.
+
 ## Self-Check: PASSED
 
 - FOUND: public/projects/store-sales-forecasting/diagram.svg
