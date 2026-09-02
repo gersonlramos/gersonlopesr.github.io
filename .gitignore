@@ -3,6 +3,8 @@ dist/
 .astro/
 .env
 .DS_Store
+.claude
+.planning
 
 # Resume source documents (contain full PII; only the converted public/*.pdf is published)
 *.docx
